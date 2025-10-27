@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="LEKY_PREDPISY" directorySegmentName="seg_0" id="DE46E5D0-E5DB-A2F5-CF76-73B1E098CD40">
+<createdBy>st72567</createdBy>
+<createdTime>2024-12-02 10:05:09 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>61B2A86C-93BE-8157-1E6C-97463C7781E6</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>B28734AD-5AE3-755F-67ED-3DF6CDA38178</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>253349B6-DD3B-EB23-B4EB-A245734E4CEF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

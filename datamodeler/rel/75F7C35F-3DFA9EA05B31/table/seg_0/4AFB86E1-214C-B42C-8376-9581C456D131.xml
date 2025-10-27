@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4AFB86E1-214C-B42C-8376-9581C456D131" name="LEK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>253349B6-DD3B-EB23-B4EB-A245734E4CEF</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Lek" id="03EB1FE9-9BA4-4D35-2767-A28F78521F4A">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>B72ADC40-A1CD-2A3A-EDE8-0638A251BD13</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazevLeku" id="5868F060-FC3D-4D62-8CC6-35AF5ADA89AB">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>D4DCDBD3-03B4-6C30-3A4E-FAAA93F4CF98</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ucinnaLatka" id="C3F41175-6B3D-F4B8-850B-471163A36E74">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>2D194EAB-35FC-360D-F733-BB6EABFAE08B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="druhLeku" id="0BD20EFD-0747-3A3F-E247-6BF1FA58B05E">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>58E4E393-7AD6-3A76-F607-B4555C0155D7</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="doporuceneDavkovani" id="6F54923F-D05A-2074-81CE-30C87CAA11A4">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>885F2DDB-27B5-DAAF-FCDE-A01D76462820</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vedlejsiUcinky" id="EDC5B923-1E5E-5FFB-EB02-1A46D0B84C43">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>36A6CF09-EA12-CFC3-6323-88C61BB9E314</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cena" id="EB1C7B7E-C1F9-35E4-01DD-0428CD9C4C2A">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>417F5A6C-5763-D06E-B176-45ABE60B3DBF</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B9905DEF-7F3E-8D6F-0AA5-C494BED75DF0" name="LEK_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>09EF020A-8D29-5B2D-C49D-3A7FDB593FF0</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03EB1FE9-9BA4-4D35-2767-A28F78521F4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

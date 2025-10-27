@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="00479236-9BDA-B42D-83FB-6D1BC4652B85" name="LEK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>253349B6-DD3B-EB23-B4EB-A245734E4CEF</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Lek" id="1B963F45-D8CC-911A-1C02-B20804AB1091">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>B72ADC40-A1CD-2A3A-EDE8-0638A251BD13</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazevLeku" id="DE42F7DB-721A-7D44-AB81-BDE17EB9104C">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>D4DCDBD3-03B4-6C30-3A4E-FAAA93F4CF98</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ucinnaLatka" id="5527335A-EDC6-E86A-C935-28928C75EA28">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>2D194EAB-35FC-360D-F733-BB6EABFAE08B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="doporuceneDavkovani" id="1D1DDE13-E8E6-701A-EE43-B4E679860787">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>885F2DDB-27B5-DAAF-FCDE-A01D76462820</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vedlejsiUcinky" id="F9689490-D42B-48A1-70ED-3D45E656E7F3">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>36A6CF09-EA12-CFC3-6323-88C61BB9E314</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cena" id="BAED3FC9-9012-9374-DA49-A1344EBDDB93">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>417F5A6C-5763-D06E-B176-45ABE60B3DBF</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8354CF33-5317-430F-EB72-E007D7CDC0C8" name="LEK_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>09EF020A-8D29-5B2D-C49D-3A7FDB593FF0</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B963F45-D8CC-911A-1C02-B20804AB1091"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

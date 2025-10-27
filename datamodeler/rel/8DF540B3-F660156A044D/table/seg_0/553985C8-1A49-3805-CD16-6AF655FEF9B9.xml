@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="553985C8-1A49-3805-CD16-6AF655FEF9B9" name="DOPORUCENI">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>056A86BF-63C9-4394-2CBD-2F6ECDA66E5F</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_doporuceni" id="654172B5-7C96-8BA2-0D65-3C8324A1AC68">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>57E13405-47EC-AC00-123F-4C9EEC75E8E0</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumVydani" id="111AC58A-96DB-FB82-F9E5-7DD771445608">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum vydání doporučení]]></commentInRDBMS>
+<generatorID>B7BB61F3-A75F-EC0B-B432-CA66F1256545</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duvodDoporuceni" id="D55DE63D-204B-8796-7FD1-526D1B327F8B">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Důvod doporučení]]></commentInRDBMS>
+<generatorID>5B4A69FD-2527-CD35-B2B9-185DB00AEB88</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="59E73EC4-A3E3-34DB-8B45-68D805DCFB90" name="DOPORUCENI_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>10B5AB43-1594-E1E5-C838-546A214F2445</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="654172B5-7C96-8BA2-0D65-3C8324A1AC68"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

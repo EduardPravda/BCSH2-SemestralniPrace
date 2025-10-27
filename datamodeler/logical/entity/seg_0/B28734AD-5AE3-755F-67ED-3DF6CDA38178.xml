@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B28734AD-5AE3-755F-67ED-3DF6CDA38178" name="LEKARSKY PREDPIS">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:53:30 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID Predpis" id="192EC364-9BF3-6F61-A21A-1C079FED9670">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:56:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor lékařského předpisu]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datumVydani" id="04418DC6-E261-1BB3-2E14-7E0E66783D31">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:03:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum vydání předpisu]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="popisLeku" id="3C3D94B0-5D35-3027-CE24-DC1B44A2D224">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:04:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam léků předepsaných pacientovi]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="davkovani" id="9B0E9DA4-EAFE-E94A-BD6A-45B12621562D">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:04:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Dávkování léků]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="delkaLecby" id="6C32CB22-6047-A5F9-5796-BE0FDDBF20CF">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:04:40 UTC</createdTime>
+<commentInRDBMS><![CDATA[Délka léčby]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LEKAR ID Lekar" id="4682F4D1-0812-0A3F-D73D-63547BB2CAE5">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 11:28:01 UTC</createdTime>
+<generatorID>FF3F860F-C2D9-3AE7-7B19-57814B43CADA</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<referedAttribute>92CB3CFF-290B-54BE-A3D8-9D161E11152B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="VYSETRENI ID Vysetreni" id="9FDA2BE7-8A6D-0E4A-80B0-79B26C9DD715">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 17:57:49 UTC</createdTime>
+<generatorID>2A4DFABD-5BF3-B0AC-938A-C599A309B708</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<referedAttribute>CEB9AA75-A4F8-1099-81AC-961D639F8694</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="61B2A86C-93BE-8157-1E6C-97463C7781E6" name="LEKARSKY_PREDPIS_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:57:42 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>192EC364-9BF3-6F61-A21A-1C079FED9670</attributeRef>
+<attributeRef>4682F4D1-0812-0A3F-D73D-63547BB2CAE5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

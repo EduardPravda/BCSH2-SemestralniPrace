@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E3AE9288-2B87-63AE-E5D4-171FA6DE5C8A" containerWithKeyObject="EABD2A75-7CAC-E557-9E9A-B524F3B6BD67" localFKIndex="E4946CF6-09C7-B7D5-3FFD-E9E9D28622E0" name="NEMOC_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>BA2A006C-3F94-4618-3CC8-AF304EA95688</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<referredTableLongName>ANAMNEZA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9631A14D-8BC1-7CF8-4201-67022D2CD253</referredTableID>
+<keyObject>E14405F7-DB7B-FA43-9BF5-139C2ECF2B67</keyObject>
+<referredKeyID>E14405F7-DB7B-FA43-9BF5-139C2ECF2B67</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Anamneza</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

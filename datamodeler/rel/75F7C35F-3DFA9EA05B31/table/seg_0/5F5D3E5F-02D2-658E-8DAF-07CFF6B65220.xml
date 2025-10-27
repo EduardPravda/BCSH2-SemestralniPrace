@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5F5D3E5F-02D2-658E-8DAF-07CFF6B65220" name="PRACOVNI_NESCHOPNOST">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>4E7DDF77-4265-3A9C-EABB-415438CBE9C0</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Neschopnost" id="F2A6323E-78B3-1C8E-B96F-6095CE681620">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor pracovní neschopnosti]]></commentInRDBMS>
+<generatorID>A18D4685-92F4-EA94-4D51-D5C7C303E408</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zacatekNeschopnosti" id="104121D4-A185-6A85-B4EF-8FFA8B271119">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum začátku pracovní neschopnosti]]></commentInRDBMS>
+<generatorID>B2D6334E-67C5-BE5E-0DCD-810CBECEDC98</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="konecNeschopnosti" id="CFF94635-DC09-59DB-53A2-3C362146EAE0">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum ukončení pracovní neschopnosti]]></commentInRDBMS>
+<generatorID>8B01737A-7AD4-47E4-07AB-061810499EEC</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duvod" id="D113ECBA-A421-23B0-6EC7-34115923ABD3">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Důvod pracovní neschopnosti]]></commentInRDBMS>
+<generatorID>FC726882-C905-EE66-7F5F-3ADCF30D2218</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VYSETRENI_ID_Vysetreni" id="28DD56EF-C394-164B-16EE-7379055ACD87">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>2F333E97-5D14-B2B2-E369-9CFDA2154E46</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A5155F10-F33F-9948-2BF2-EDDBDBB677FA" referredColumn="EA1E33E7-821E-03BF-F569-5842EEA82D82"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="441B4BE9-2850-5C09-1E63-9CFD2F7C487A" name="PRACOVNI_NESCHOPNOST_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>06F66A5D-80CA-BD81-8707-D4D4DDA829AE</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F2A6323E-78B3-1C8E-B96F-6095CE681620"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1AE2B8C7-27A6-7057-37CC-C186482D4B0C" name="PRACOVNI_NESCHOPNOST_VYSETRENI_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<generatorID>FA0CC696-D8F2-F8A8-EE62-942FADAE30FB</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28DD56EF-C394-164B-16EE-7379055ACD87"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

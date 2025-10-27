@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E75B1491-6C64-A3B6-8D67-5C8F68953521" containerWithKeyObject="DD2D9C32-AC8F-B653-672B-A75D0205E9A5" localFKIndex="4BFF9EC3-3612-D387-8E74-90C07AFB3438" name="FK_SOUBOR_UZIVATEL">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 20:43:03 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<referredTableLongName>UZIVATEL</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>E45EAB01-D88D-1230-7C40-5F73E2B52A7B</referredTableID>
+<keyObject>20649D81-E16C-BE6B-12E2-D880A54C40D6</keyObject>
+<referredKeyID>20649D81-E16C-BE6B-12E2-D880A54C40D6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_uzivatel</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

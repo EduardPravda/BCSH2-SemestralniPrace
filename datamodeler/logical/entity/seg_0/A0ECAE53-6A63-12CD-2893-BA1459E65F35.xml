@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A0ECAE53-6A63-12CD-2893-BA1459E65F35" name="ORDINACNI DOBA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:25:40 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID Ordinacni Doby" id="B3546F6D-72D1-8E8A-885F-22042A7FCF7C">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:25:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor ordinační doby]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="den" id="C6E82BFE-BE0C-A610-025A-06A1D27FA80B">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:26:48 UTC</createdTime>
+<commentInRDBMS><![CDATA[Den ordinační doby]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="zacatek" id="E988E287-4D68-D4BA-40B3-7F1E72435FCE">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:27:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[Čas začátku ordinační doby]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="konec" id="3C10417C-C384-C418-AA31-55C8CC37C164">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:27:31 UTC</createdTime>
+<commentInRDBMS><![CDATA[Čas konce ordinační doby]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LEKAR ID Lekar" id="BABA6759-72AD-B34D-E1B9-C02033F14615">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 11:40:44 UTC</createdTime>
+<generatorID>D8B5DBE1-4A90-A705-7A1E-B451610A824C</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<referedAttribute>92CB3CFF-290B-54BE-A3D8-9D161E11152B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D671DFE9-7AE2-0CA0-9A87-072ACC7D71CA" name="ORDINACNI_DOBA_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 13:26:16 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B3546F6D-72D1-8E8A-885F-22042A7FCF7C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

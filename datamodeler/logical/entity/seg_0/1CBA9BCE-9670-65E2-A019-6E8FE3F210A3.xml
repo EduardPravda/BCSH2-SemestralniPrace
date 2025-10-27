@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1CBA9BCE-9670-65E2-A019-6E8FE3F210A3" name="PACIENT">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:32:47 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID Pacient" id="AE1A0E53-036F-18B1-182B-3241E8AE4BDA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:33:12 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="jmeno" id="86601C17-7926-A8CB-453B-72B72416B37B">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:35:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Křestní jméno pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prijmeni" id="247248A3-6B02-BC5B-AC72-3551C3A08C24">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:36:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Příjmení pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datumNarozeni" id="C2599720-A341-BFB8-308A-216896586D4E">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:36:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum narození pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefon" id="F49026D1-A7D3-5F63-8E37-EA1B46CE8868">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:43:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Telefonní číslo pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="670096C5-FA5F-E37A-2A63-DE3D61F623D6">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:43:52 UTC</createdTime>
+<commentInRDBMS><![CDATA[E-mailová adresa pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID  Adresa" id="CAEBF187-86A0-0561-D65D-18AAE13E1348">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:16:26 UTC</createdTime>
+<generatorID>181BEE50-3910-50DB-CB7B-030EF3BFB276</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<referedAttribute>A06DDC35-D19E-5B2B-0E91-5FFB136121C1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="18C6386F-F00B-F562-948B-D1DD035666D9" name="PACIENT_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 14:37:48 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>AE1A0E53-036F-18B1-182B-3241E8AE4BDA</newElementsIDs>
+<usedAttributes>
+<attributeRef>AE1A0E53-036F-18B1-182B-3241E8AE4BDA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

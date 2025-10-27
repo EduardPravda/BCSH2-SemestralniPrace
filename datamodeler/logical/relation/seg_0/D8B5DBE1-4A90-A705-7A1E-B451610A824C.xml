@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ORDINACNI DOBA LEKAR FK" directorySegmentName="seg_0" id="D8B5DBE1-4A90-A705-7A1E-B451610A824C">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 11:40:44 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>EE0ADF80-88FA-0223-31EB-AB6D3BC266ED</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CEA12604-2D33-1E85-BD88-B400AACF9FC4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A0ECAE53-6A63-12CD-2893-BA1459E65F35</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

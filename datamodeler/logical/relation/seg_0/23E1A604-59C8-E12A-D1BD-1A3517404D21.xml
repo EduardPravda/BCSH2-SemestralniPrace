@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="KOMUNIKACE PACIENT FK" directorySegmentName="seg_0" id="23E1A604-59C8-E12A-D1BD-1A3517404D21">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 11:27:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>18C6386F-F00B-F562-948B-D1DD035666D9</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1CBA9BCE-9670-65E2-A019-6E8FE3F210A3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3A7325E5-75E1-F533-F094-68D5062D0AD0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

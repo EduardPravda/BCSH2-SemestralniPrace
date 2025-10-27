@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E63D82B5-D155-9A00-3665-C2FBD274ACB5" name="ZDRAVOTNI KARTA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:45:10 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="alergie" id="A72EF32F-06D2-47DA-41D8-702402F8D697">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:46:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam alergií pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="chronickaOnemocneni" id="AA1E8024-7CC1-A410-94EB-7F67A42D6553">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:47:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam chronických onemocnění]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ockovani" id="680E1093-A29F-BF56-C72C-EB6628840154">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:47:53 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam očkování pacienta]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PACIENT ID Pacient" id="01F3800A-9501-5C76-9F32-BF02197F9A46">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-01 10:29:59 UTC</createdTime>
+<generatorID>C0A3A4EA-3108-5A29-5D48-CEE8565D5647</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<referedAttribute>AE1A0E53-036F-18B1-182B-3241E8AE4BDA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AA655DF9-EE25-86E8-6427-29E0ADA82FCD" name="ZDRAVOTNI_KARTA_PK">
+<createdBy>st72567</createdBy>
+<createdTime>2024-12-02 10:01:07 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>01F3800A-9501-5C76-9F32-BF02197F9A46</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

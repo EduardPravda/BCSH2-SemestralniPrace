@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4E7DDF77-4265-3A9C-EABB-415438CBE9C0" name="PRACOVNI NESCHOPNOST">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:49:24 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID Neschopnost" id="A18D4685-92F4-EA94-4D51-D5C7C303E408">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:49:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor pracovní neschopnosti]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="zacatekNeschopnosti" id="B2D6334E-67C5-BE5E-0DCD-810CBECEDC98">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:50:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum začátku pracovní neschopnosti]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="konecNeschopnosti" id="8B01737A-7AD4-47E4-07AB-061810499EEC">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:51:26 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum ukončení pracovní neschopnosti]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="duvod" id="FC726882-C905-EE66-7F5F-3ADCF30D2218">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:52:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[Důvod pracovní neschopnosti]]></commentInRDBMS>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="VYSETRENI ID Vysetreni" id="2F333E97-5D14-B2B2-E369-9CFDA2154E46">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 17:57:49 UTC</createdTime>
+<generatorID>FA0CC696-D8F2-F8A8-EE62-942FADAE30FB</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<referedAttribute>CEB9AA75-A4F8-1099-81AC-961D639F8694</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="06F66A5D-80CA-BD81-8707-D4D4DDA829AE" name="PRACOVNI_NESCHOPNOST_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-19 12:49:59 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A18D4685-92F4-EA94-4D51-D5C7C303E408</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

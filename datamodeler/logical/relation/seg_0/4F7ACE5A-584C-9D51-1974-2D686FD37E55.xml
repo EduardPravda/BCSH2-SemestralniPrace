@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="DOPORUCENI ANAMNEZA FK" directorySegmentName="seg_0" id="4F7ACE5A-584C-9D51-1974-2D686FD37E55">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 18:47:53 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>10B5AB43-1594-E1E5-C838-546A214F2445</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>056A86BF-63C9-4394-2CBD-2F6ECDA66E5F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A93EA104-1576-A224-BDCC-F9718C182213</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

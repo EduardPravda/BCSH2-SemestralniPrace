@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4D2F38B-7938-43CB-834F-8FAD9C02543E" name="LEKARSKY_PREDPIS">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>B28734AD-5AE3-755F-67ED-3DF6CDA38178</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Predpis" id="2C9139CF-A647-5159-31C4-878ADF455391">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor lékařského předpisu]]></commentInRDBMS>
+<generatorID>192EC364-9BF3-6F61-A21A-1C079FED9670</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumVydani" id="F2C7288B-9BB9-3E8F-DBD5-C44C2E855B46">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum vydání předpisu]]></commentInRDBMS>
+<generatorID>04418DC6-E261-1BB3-2E14-7E0E66783D31</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="popisLeku" id="03947B98-0BD0-45D6-612B-26F17ECDCCBB">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam léků předepsaných pacientovi]]></commentInRDBMS>
+<generatorID>3C3D94B0-5D35-3027-CE24-DC1B44A2D224</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="davkovani" id="53A70782-BC7F-DB89-0B89-34C11E090E80">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Dávkování léků]]></commentInRDBMS>
+<generatorID>9B0E9DA4-EAFE-E94A-BD6A-45B12621562D</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="delkaLecby" id="911D2855-59AC-BF00-AB11-D757420D2896">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Délka léčby]]></commentInRDBMS>
+<generatorID>6C32CB22-6047-A5F9-5796-BE0FDDBF20CF</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEKAR_ID_Lekar" id="2C9264FD-F6F3-010A-4114-D3F05FDF11E0">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>4682F4D1-0812-0A3F-D73D-63547BB2CAE5</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D4E7A9F2-00A1-1A10-C0BD-D356967EED03" referredColumn="E3D995E7-DC7D-0FA5-D4F4-FBB5BD406D63"/>
+</associations>
+</Column>
+<Column name="VYSETRENI_ID_Vysetreni" id="63203907-6E2A-279D-5DFE-7218AE7CD221">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>9FDA2BE7-8A6D-0E4A-80B0-79B26C9DD715</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="47E26B0C-3970-665B-3F8D-1D19830B7690" referredColumn="EA1E33E7-821E-03BF-F569-5842EEA82D82"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="05A6D01F-B998-C213-5418-6E118D6EDE0B" name="LEKARSKY_PREDPIS_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>61B2A86C-93BE-8157-1E6C-97463C7781E6</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C9139CF-A647-5159-31C4-878ADF455391"/>
+<colUsage columnID="2C9264FD-F6F3-010A-4114-D3F05FDF11E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3002F48D-1105-4B33-28B5-9A87C12A7B9E" name="LEKARSKY_PREDPIS_VYSETRENI_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<generatorID>2A4DFABD-5BF3-B0AC-938A-C599A309B708</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63203907-6E2A-279D-5DFE-7218AE7CD221"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DEEEB1B-31D5-27E1-9F1C-C18A3B52AB4A" name="LEKARSKY_PREDPIS_LEKAR_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<generatorID>FF3F860F-C2D9-3AE7-7B19-57814B43CADA</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C9264FD-F6F3-010A-4114-D3F05FDF11E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

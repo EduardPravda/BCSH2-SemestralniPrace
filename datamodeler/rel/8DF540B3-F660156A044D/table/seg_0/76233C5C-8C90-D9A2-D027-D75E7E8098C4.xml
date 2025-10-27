@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="76233C5C-8C90-D9A2-D027-D75E7E8098C4" name="ZDRAVOTNI_KARTA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>E63D82B5-D155-9A00-3665-C2FBD274ACB5</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="alergie" id="6FF7C069-8407-A27B-3965-0E7E54D91273">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam alergií pacienta]]></commentInRDBMS>
+<generatorID>A72EF32F-06D2-47DA-41D8-702402F8D697</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="chronickaOnemocneni" id="4D859BAD-A2E1-EEA0-11C1-77B792CC8E74">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam chronických onemocnění]]></commentInRDBMS>
+<generatorID>AA1E8024-7CC1-A410-94EB-7F67A42D6553</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ockovani" id="E91E09A4-A903-C5A0-73EA-E291743AA8EA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Seznam očkování pacienta]]></commentInRDBMS>
+<generatorID>680E1093-A29F-BF56-C72C-EB6628840154</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PACIENT_ID_Pacient" id="96B7DDC0-0E4C-62E3-FE04-1C820C5DD5E3">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>01F3800A-9501-5C76-9F32-BF02197F9A46</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="03A1438E-6D45-D19F-1F01-9A4C912488DB" referredColumn="94E6C725-08B0-0EF9-F100-70CAD7533580"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4C645C16-2F4B-290D-201B-B8D36C2D6C0E" name="ZDRAVOTNI_KARTA_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>AA655DF9-EE25-86E8-6427-29E0ADA82FCD</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="96B7DDC0-0E4C-62E3-FE04-1C820C5DD5E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E2329ED8-D890-143C-1A9A-C51CF1D63F03" name="ZDRAVOTNI_KARTA_PACIENT_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>C0A3A4EA-3108-5A29-5D48-CEE8565D5647</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="96B7DDC0-0E4C-62E3-FE04-1C820C5DD5E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

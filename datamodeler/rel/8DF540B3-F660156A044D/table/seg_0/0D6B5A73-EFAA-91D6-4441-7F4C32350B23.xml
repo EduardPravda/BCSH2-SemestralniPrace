@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0D6B5A73-EFAA-91D6-4441-7F4C32350B23" name="ANAMNEZA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>A93EA104-1576-A224-BDCC-F9718C182213</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Anamneza" id="4FA0BF5E-C40C-BF59-734A-6C99B5BC8339">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>A1C67E9D-2D3D-E0C4-FA6D-CD0C68219590</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumZaznamu" id="B91F440E-4649-846A-934B-00D02364A628">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>57D1EB9F-5259-7353-4EE4-695AE4986490</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="poznamky" id="A4E18050-E25D-0AAC-3A6D-CA2724769E0D">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>1F9A1B6E-3CA5-F7EE-D174-D695FAA199AA</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DOPORUCENI_ID_doporuceni" id="16B2194E-C2C8-FFC3-D2BB-D1086219E9FD">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>9E257A58-067B-BB07-FB1A-FC921E77DD94</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A164CAAB-5A4C-1016-B405-29D19A7E09BA" referredColumn="654172B5-7C96-8BA2-0D65-3C8324A1AC68"/>
+</associations>
+</Column>
+<Column name="PACIENT_ID_Pacient" id="4FE91A5B-D5E1-BC58-1BE7-868863139D63">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>762A4F54-93E6-8E56-166F-3741B03A184B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E2E7F64-D6DC-E073-1816-617E97D7FE2B" referredColumn="94E6C725-08B0-0EF9-F100-70CAD7533580"/>
+</associations>
+</Column>
+<Column name="LEKAR_ID_Lekar" id="141FFD5C-71FA-C9DB-73F4-C5E6C7C59076">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-18 22:17:42 UTC</createdTime>
+<generatorID>41532FC0-DF82-D1E3-CE50-D5B07F7CC496</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BAADAC86-EAD3-422C-23B2-F1796802D844" referredColumn="523161D6-0835-40EE-A6FB-70D3483A4DA7"/>
+</associations>
+</Column>
+<Column name="TYP_ANAMNEZY" id="4925FE89-D796-2AB7-C374-714CFFFC0DEA">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-19 13:07:54 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9104B9E0-818D-174D-9E95-F253E7BC2864" name="ANAMNEZA_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>1590F44A-4DFE-BF3F-976C-3507CBF0F325</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FA0BF5E-C40C-BF59-734A-6C99B5BC8339"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5535581E-0CB2-1591-1ACF-8ECE532BD883" name="ANAMNEZA_DOPORUCENI_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>4F7ACE5A-584C-9D51-1974-2D686FD37E55</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16B2194E-C2C8-FFC3-D2BB-D1086219E9FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D7C64DF3-0E35-29FD-AB24-0EBB7D13D1D3" name="ANAMNEZA_PACIENT_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>1AECEEE2-AD97-3896-B0E2-1E76222136EB</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FE91A5B-D5E1-BC58-1BE7-868863139D63"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6947BA99-CC99-D5D8-C459-7B8FE54C796B" name="ANAMNEZA_LEKAR_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-18 22:17:42 UTC</createdTime>
+<generatorID>87F1D68F-B3FC-EF97-8774-F8E5D53D3259</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="141FFD5C-71FA-C9DB-73F4-C5E6C7C59076"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_ANAMNEZA_TYP" directorySegmentName="seg_0" id="CE61C264-2B47-31EB-39AD-E3A3323B0E0D">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-19 13:30:56 UTC</createdTime>
+<ownerDesignName>Eduard_Pravda_BDAS1</ownerDesignName>
+<rule><![CDATA[TYP_ANAMNEZY IN ('O', 'R')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

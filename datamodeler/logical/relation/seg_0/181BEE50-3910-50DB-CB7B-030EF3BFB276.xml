@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PACIENT ADRESA FK" directorySegmentName="seg_0" id="181BEE50-3910-50DB-CB7B-030EF3BFB276">
+<createdBy>st72567</createdBy>
+<createdTime>2024-12-02 10:08:47 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>18C6386F-F00B-F562-948B-D1DD035666D9</sourcePk>
+<targetPk>BA31CEB6-EDDF-73D3-AB77-C8EB918CE904</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>1CBA9BCE-9670-65E2-A019-6E8FE3F210A3</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>DA00DDB3-2D5F-FABB-ADEF-1667381A7750</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

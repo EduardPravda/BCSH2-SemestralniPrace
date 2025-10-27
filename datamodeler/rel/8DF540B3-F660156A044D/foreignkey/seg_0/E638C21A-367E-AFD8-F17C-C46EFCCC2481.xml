@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E638C21A-367E-AFD8-F17C-C46EFCCC2481" containerWithKeyObject="1E7EB1D9-19B5-EDDC-2278-634A9CEE2A6C" localFKIndex="B1E806B9-CD86-B135-9B17-2F48125716EF" name="OSOBNI_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>27EAE610-1FBB-AF2B-7E82-840E09E25D1E</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<referredTableLongName>ANAMNEZA</referredTableLongName>
+<arc>2A9C37D3-F41A-7005-F51F-9164A5EAF05F</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0D6B5A73-EFAA-91D6-4441-7F4C32350B23</referredTableID>
+<keyObject>9104B9E0-818D-174D-9E95-F253E7BC2864</keyObject>
+<referredKeyID>9104B9E0-818D-174D-9E95-F253E7BC2864</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Anamneza</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorValue>O</discriminatorValue>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

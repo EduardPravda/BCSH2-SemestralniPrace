@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E84BF3B0-CF36-B3A0-C4E0-5EBCD4FCD0F9" name="RODINNA_ANAMNEZA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>01C669F8-C44B-4584-7DBF-1DFF6E8A36CB</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Anamneza" id="CD264BDE-8ECC-1476-5579-DBD3D05173D3">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>A1C67E9D-2D3D-E0C4-FA6D-CD0C68219590</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ABDC3AFD-657D-CAD4-1D33-9513A98A40DB" referredColumn="1D991CEF-E5B4-34F7-78EB-75A1801162F5"/>
+</associations>
+</Column>
+<Column name="pribuzny" id="A271C62C-0B61-E1BA-5CA9-840B5E81EB03">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Určuje, o jakého člena rodiny se jedná (např. otec, matka, bratr, atd.).]]></commentInRDBMS>
+<generatorID>54E57249-F2E7-B98C-B422-32D9851EEF8B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zdravotniStav" id="17C1D2EF-6343-0B47-0849-D75AE09D5A39">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Popis zdravotního stavu daného příbuzného.]]></commentInRDBMS>
+<generatorID>82B75BE6-0F2D-B1B7-6F7C-C1910B430A45</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genetickeRiziko" id="B0036E12-6271-F030-80A3-59AB7D51783F">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Informace o tom, zda jsou u pacienta zjištěna genetická rizika na základě rodinné anamnézy (ano/ne).]]></commentInRDBMS>
+<generatorID>44D17D40-FCDF-FE26-7736-650AF7BD4C32</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="54B3C710-5309-18B3-0DF7-F0AFB8BFCDC7" name="RODINNA_ANAMNEZA_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>1590F44A-4DFE-BF3F-976C-3507CBF0F325</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD264BDE-8ECC-1476-5579-DBD3D05173D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2AC898F9-89CB-B99E-40FE-3EDA70D0C899" name="RODINNA_ANAMNEZA_PKv1">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>A158CF36-1A88-96C2-073A-67314A9FC218</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="2ADEE10A-324A-B640-A5B8-17069380FB1D" name="RODINNA_ANAMNEZA_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>648E82B3-9321-8B4F-9590-79EB53EBF95E</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD264BDE-8ECC-1476-5579-DBD3D05173D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

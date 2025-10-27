@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="790FEC83-1695-094D-9EF4-E3DA23060BDC" name="LEKY_PREDPISY">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Predpis" id="D4299AAA-6EDF-D30C-F8A5-340AB28AAD2A">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8A77C588-6056-6C45-433F-F8684C256448" referredColumn="CA21B7AB-71ED-485A-9A3F-BD6C239743B7"/>
+</associations>
+</Column>
+<Column name="ID_Lekar" id="4E4C8507-0143-00AF-E0EA-AA147ED754EA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8A77C588-6056-6C45-433F-F8684C256448" referredColumn="BBDC3FFD-DE30-318A-BF13-19C4502F4B82"/>
+</associations>
+</Column>
+<Column name="ID_Lek" id="50B4E5B3-1669-08B0-028A-B1C109CAA62C">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF8BB4C9-65A1-4DAC-4E17-1A539E23D35D" referredColumn="1B963F45-D8CC-911A-1C02-B20804AB1091"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="29DE8E3F-FF45-0781-6F36-7CCD09003A15" name="LEKY_PREDPISY_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4299AAA-6EDF-D30C-F8A5-340AB28AAD2A"/>
+<colUsage columnID="4E4C8507-0143-00AF-E0EA-AA147ED754EA"/>
+<colUsage columnID="50B4E5B3-1669-08B0-028A-B1C109CAA62C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="893ED0F4-50B2-1FB4-1B2B-FE4CAEBB9D28" name="LEKARSKY_PREDPIS_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>DE46E5D0-E5DB-A2F5-CF76-73B1E098CD40</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4299AAA-6EDF-D30C-F8A5-340AB28AAD2A"/>
+<colUsage columnID="4E4C8507-0143-00AF-E0EA-AA147ED754EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CA665861-5791-A8E0-8B79-E1D73B156EA7" name="LEKY_PREDPISY_LEK_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>DE46E5D0-E5DB-A2F5-CF76-73B1E098CD40</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50B4E5B3-1669-08B0-028A-B1C109CAA62C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="97ACBFAE-62DD-8F45-E9C9-C1235AC86192" name="REZERVACE">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>EC920539-1DCE-9E4C-D6BF-051857886734</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Rezervace" id="12C07388-DA11-120D-380A-D87397D0E873">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor rezervace]]></commentInRDBMS>
+<generatorID>F817DDA8-69D2-F74E-F414-43341B83113D</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumACas" id="06841B54-9AE5-A387-D5D9-87523EC7EA43">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum a čas rezervace]]></commentInRDBMS>
+<generatorID>4C0A291F-B79D-3DD0-AF2B-EA0883849605</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PACIENT_ID_Pacient" id="2D031E2E-DB1E-B6B0-3FE6-622641BA1144">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>67127826-CB6D-CAE9-08D3-C1FDDA9A22E6</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4EA2495C-BEF6-FA0C-41CC-3EC45A9115CA" referredColumn="C4685390-BB75-6493-7634-80B587B47423"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F23DEA28-D330-D3AF-B70E-8E8DF7CF314B" name="REZERVACE_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>310CE7C6-00DA-FCCA-DA80-249A5023F0D0</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12C07388-DA11-120D-380A-D87397D0E873"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB5B93E8-9934-A4B1-AD2F-A9C5CA721A64" name="REZERVACE_PACIENT_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<generatorID>C88AE3FF-3C97-008A-9A1C-FB5CC46D9CD4</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D031E2E-DB1E-B6B0-3FE6-622641BA1144"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

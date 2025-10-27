@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F78C85E4-5757-E4DC-9CE6-DB0EBA39023E" name="ROLE">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:45:53 UTC</createdTime>
+<generatorID>F56BF528-215B-57B6-54D4-4C22C1A72ED2</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_role" id="223749A4-9F14-E87E-0D74-B9AAC98C0C48">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:53:43 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev_role" id="4FEA067E-0309-71C0-ED73-4C79481E24C3">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:53:43 UTC</createdTime>
+<notes><![CDATA[Tato tabulka slouží jako číselník pro role uživatelů.]]></notes>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FBA5F396-CEBC-C500-BD42-0B5A4C78FCDA" name="ROLE_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:53:43 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="223749A4-9F14-E87E-0D74-B9AAC98C0C48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ZDRAVOTNI KARTA PACIENT FK" directorySegmentName="seg_0" id="C0A3A4EA-3108-5A29-5D48-CEE8565D5647">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 11:19:13 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>18C6386F-F00B-F562-948B-D1DD035666D9</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>má</nameOnSource>
+<nameOnTarget>patří</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1CBA9BCE-9670-65E2-A019-6E8FE3F210A3</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>E63D82B5-D155-9A00-3665-C2FBD274ACB5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

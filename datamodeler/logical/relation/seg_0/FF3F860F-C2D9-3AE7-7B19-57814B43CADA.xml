@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="LEKARSKY PREDPIS LEKAR FK" directorySegmentName="seg_0" id="FF3F860F-C2D9-3AE7-7B19-57814B43CADA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 11:28:01 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>EE0ADF80-88FA-0223-31EB-AB6D3BC266ED</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CEA12604-2D33-1E85-BD88-B400AACF9FC4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B28734AD-5AE3-755F-67ED-3DF6CDA38178</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

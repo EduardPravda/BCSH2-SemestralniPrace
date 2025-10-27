@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3F69787A-EA96-CF87-D1A8-49823F5D16F9" name="PACIENT">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>1CBA9BCE-9670-65E2-A019-6E8FE3F210A3</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Pacient" id="C4685390-BB75-6493-7634-80B587B47423">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor pacienta]]></commentInRDBMS>
+<generatorID>AE1A0E53-036F-18B1-182B-3241E8AE4BDA</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="jmeno" id="7F480E2B-09D6-645B-B4B1-FA9E9FF69278">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Křestní jméno pacienta]]></commentInRDBMS>
+<generatorID>86601C17-7926-A8CB-453B-72B72416B37B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prijmeni" id="E7164A11-0767-46AA-2EE0-9A9FD6633E6B">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Příjmení pacienta]]></commentInRDBMS>
+<generatorID>247248A3-6B02-BC5B-AC72-3551C3A08C24</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumNarozeni" id="C3E6F54E-3B3B-4152-3615-4B7734EB3929">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum narození pacienta]]></commentInRDBMS>
+<generatorID>C2599720-A341-BFB8-308A-216896586D4E</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefon" id="89DE96A7-0EC3-E425-4AA5-EC9B007D6D17">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Telefonní číslo pacienta]]></commentInRDBMS>
+<generatorID>F49026D1-A7D3-5F63-8E37-EA1B46CE8868</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="815C89EF-0B17-A191-F189-5DB8F662E6D3">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[E-mailová adresa pacienta]]></commentInRDBMS>
+<generatorID>670096C5-FA5F-E37A-2A63-DE3D61F623D6</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADRESA_ID__Adresa" id="57FFB77A-5016-7AC4-6132-7ABA2FA88A7C">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>EE9C37EE-32C2-097D-7040-91194903AB00</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C76D5F7E-EBAF-CA9C-FC37-BEF241D3D36E" referredColumn="757EF328-D9C9-7756-B853-62E46AB3D063"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="36288BCE-07CB-90BA-2BBB-D5AEBD83E0F5" name="PACIENT_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>18C6386F-F00B-F562-948B-D1DD035666D9</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4685390-BB75-6493-7634-80B587B47423"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91CAF341-6260-9176-304B-D2F4797C87E4" name="PACIENT__IDX">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-08 19:45:20 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>181BEE50-3910-50DB-CB7B-030EF3BFB276</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="57FFB77A-5016-7AC4-6132-7ABA2FA88A7C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7B27C8FF-CEFD-E8E9-851C-F53FAEF21EF5" name="PACIENT_ADRESA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<generatorID>181BEE50-3910-50DB-CB7B-030EF3BFB276</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57FFB77A-5016-7AC4-6132-7ABA2FA88A7C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FC2A5FB3-7B08-9C57-A85F-5BAEBC1634BF" name="RODINNA_ANAMNEZA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>01C669F8-C44B-4584-7DBF-1DFF6E8A36CB</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Anamneza" id="EAEAFD3C-8114-D9F0-818F-238261FA479F">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>A1C67E9D-2D3D-E0C4-FA6D-CD0C68219590</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A62537D-460D-7156-D161-909DD27B3523" referredColumn="4FA0BF5E-C40C-BF59-734A-6C99B5BC8339"/>
+</associations>
+</Column>
+<Column name="pribuzny" id="01D7E9BD-6BD5-A843-8D3A-53F815AAF9C9">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Určuje, o jakého člena rodiny se jedná (např. otec, matka, bratr, atd.).]]></commentInRDBMS>
+<generatorID>54E57249-F2E7-B98C-B422-32D9851EEF8B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zdravotniStav" id="1956281B-E982-3E89-47DB-5DFCCC60FCE6">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Popis zdravotního stavu daného příbuzného.]]></commentInRDBMS>
+<generatorID>82B75BE6-0F2D-B1B7-6F7C-C1910B430A45</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genetickeRiziko" id="C80BA19A-6FF3-D95E-D6CE-A86E4F0EE85A">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Informace o tom, zda jsou u pacienta zjištěna genetická rizika na základě rodinné anamnézy (ano/ne).]]></commentInRDBMS>
+<generatorID>44D17D40-FCDF-FE26-7736-650AF7BD4C32</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FD1A8907-1915-E6D1-186C-30F721904DDB" name="RODINNA_ANAMNEZA_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>1590F44A-4DFE-BF3F-976C-3507CBF0F325</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAEAFD3C-8114-D9F0-818F-238261FA479F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ACA1F006-7DC4-5CB5-2690-1C07EC179C07" name="RODINNA_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>648E82B3-9321-8B4F-9590-79EB53EBF95E</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAEAFD3C-8114-D9F0-818F-238261FA479F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

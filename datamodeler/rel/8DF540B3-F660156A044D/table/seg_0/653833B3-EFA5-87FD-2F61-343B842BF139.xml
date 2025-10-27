@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="653833B3-EFA5-87FD-2F61-343B842BF139" name="ORDINACNI_DOBA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>A0ECAE53-6A63-12CD-2893-BA1459E65F35</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Ordinacni_Doby" id="BC248A1A-1E08-83BB-3EF3-44A5E9EBC3D3">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor ordinační doby]]></commentInRDBMS>
+<generatorID>B3546F6D-72D1-8E8A-885F-22042A7FCF7C</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="den" id="E7260798-D515-DD9E-BBBD-95C09FC487C9">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Den ordinační doby]]></commentInRDBMS>
+<generatorID>C6E82BFE-BE0C-A610-025A-06A1D27FA80B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zacatek" id="270CA6A9-BE98-36FB-5146-7C5AC3DB8DBE">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Čas začátku ordinační doby]]></commentInRDBMS>
+<generatorID>E988E287-4D68-D4BA-40B3-7F1E72435FCE</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="konec" id="21EF5CE7-9309-5C39-AD15-B3DB812AC545">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<commentInRDBMS><![CDATA[Čas konce ordinační doby]]></commentInRDBMS>
+<generatorID>3C10417C-C384-C418-AA31-55C8CC37C164</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEKAR_ID_Lekar" id="C024DBF6-0742-4BBF-F438-DB36A570F71F">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>BABA6759-72AD-B34D-E1B9-C02033F14615</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A711C22-6F31-D66E-E372-588C672A4898" referredColumn="523161D6-0835-40EE-A6FB-70D3483A4DA7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="603395E0-9DEB-AAFD-73DC-68CCF9F7F662" name="ORDINACNI_DOBA_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>D671DFE9-7AE2-0CA0-9A87-072ACC7D71CA</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC248A1A-1E08-83BB-3EF3-44A5E9EBC3D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ADE2BCEE-5058-DE9A-61D7-207497AD9187" name="ORDINACNI_DOBA_LEKAR_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>D8B5DBE1-4A90-A705-7A1E-B451610A824C</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C024DBF6-0742-4BBF-F438-DB36A570F71F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

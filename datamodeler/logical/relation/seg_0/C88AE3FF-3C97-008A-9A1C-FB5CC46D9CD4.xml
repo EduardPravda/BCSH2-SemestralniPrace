@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="REZERVACE PACIENT FK" directorySegmentName="seg_0" id="C88AE3FF-3C97-008A-9A1C-FB5CC46D9CD4">
+<createdBy>eduar</createdBy>
+<createdTime>2024-10-20 11:14:55 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<engineerTo>
+<item key="8DF540B3-8EC7-8DA3-2640-F660156A044D" value="true"/>
+<item key="75F7C35F-F56A-AB8C-DBCE-3DFA9EA05B31" value="true"/>
+</engineerTo>
+<sourcePk>18C6386F-F00B-F562-948B-D1DD035666D9</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>může mít</nameOnSource>
+<nameOnTarget>má</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1CBA9BCE-9670-65E2-A019-6E8FE3F210A3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>EC920539-1DCE-9E4C-D6BF-051857886734</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

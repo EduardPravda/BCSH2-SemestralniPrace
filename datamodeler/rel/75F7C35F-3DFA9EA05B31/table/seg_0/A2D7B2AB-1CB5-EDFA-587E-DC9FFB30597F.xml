@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A2D7B2AB-1CB5-EDFA-587E-DC9FFB30597F" name="OSOBNI_ANAMNEZA">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>8926EB1B-2329-56A8-010E-0427C16D9520</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Anamneza" id="D52E64EA-32E4-DE24-A11F-34D868BC0310">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>A1C67E9D-2D3D-E0C4-FA6D-CD0C68219590</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDED76CF-C909-DBA9-DD32-3E1A470816BD" referredColumn="1D991CEF-E5B4-34F7-78EB-75A1801162F5"/>
+</associations>
+</Column>
+<Column name="celkovaAnamneza" id="DE385C14-529C-ACA7-8984-B054A7ADD126">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Popis zdravotní historie pacienta]]></commentInRDBMS>
+<generatorID>64B92BA7-D96A-14C1-4815-5B702AB5D3AB</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9DBB4B32-0290-3E68-5239-01AAE0970373" name="OSOBNI_ANAMNEZA_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>1590F44A-4DFE-BF3F-976C-3507CBF0F325</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D52E64EA-32E4-DE24-A11F-34D868BC0310"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8521420F-F47C-3B16-62A9-9A6B5D42E798" name="OSOBNI_ANAMNEZA_PKv1">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>CB4F38A0-E157-D782-D91A-209DAC58CC0F</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="C370174A-89B4-B9C2-D133-A7FBF4423A3B" name="OSOBNI_ANAMNEZA_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>27EAE610-1FBB-AF2B-7E82-840E09E25D1E</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D52E64EA-32E4-DE24-A11F-34D868BC0310"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="65F7EF61-7C11-8155-D8B4-0DD83157F6F6" name="DOPORUCENI">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>056A86BF-63C9-4394-2CBD-2F6ECDA66E5F</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Doporuceni" id="545AB44B-1626-4DC1-BBC9-FBD1D1EA8534">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primární klíč, unikátní identifikátor doporučení]]></commentInRDBMS>
+<generatorID>DCB66608-BFB9-D2BB-A3C1-F4CA8234699F</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumVydani" id="902C5552-D1B8-01D9-E9DF-9CBA18092368">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Datum vydání doporučení]]></commentInRDBMS>
+<generatorID>B7BB61F3-A75F-EC0B-B432-CA66F1256545</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duvodDoporuceni" id="E31EC17E-1536-1987-7869-6E95072FC475">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Důvod doporučení]]></commentInRDBMS>
+<generatorID>5B4A69FD-2527-CD35-B2B9-185DB00AEB88</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ANAMNEZA_ID_Anamneza" id="483C48EB-6EEC-BD3D-4AE0-2427F4ECE05C">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>202FF0A9-CED8-80A2-3261-C0F884918790</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="247CBDD3-8D4F-BEA8-1FE0-8702637BF484" referredColumn="1D991CEF-E5B4-34F7-78EB-75A1801162F5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A0CE80B-C79A-5168-1528-C48F3133A397" name="DOPORUCENI_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>10B5AB43-1594-E1E5-C838-546A214F2445</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="545AB44B-1626-4DC1-BBC9-FBD1D1EA8534"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7FD69C67-B694-2494-D1B0-E20721B5B517" name="DOPORUCENI__IDX">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-08 19:45:20 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>4F7ACE5A-584C-9D51-1974-2D686FD37E55</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="483C48EB-6EEC-BD3D-4AE0-2427F4ECE05C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B5B4220-86DA-8EC5-4DE1-D92F84620756" name="DOPORUCENI_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-08 19:58:51 UTC</createdTime>
+<generatorID>4F7ACE5A-584C-9D51-1974-2D686FD37E55</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="483C48EB-6EEC-BD3D-4AE0-2427F4ECE05C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

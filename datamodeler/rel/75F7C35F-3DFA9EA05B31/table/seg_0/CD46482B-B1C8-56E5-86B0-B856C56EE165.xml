@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD46482B-B1C8-56E5-86B0-B856C56EE165" name="LEKY_PREDPISY">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LEKARSKY_PREDPIS_ID_Predpis" id="868178D0-93AC-8D6D-1593-E2475BA63525">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F238545-0A78-C779-3DE2-FBE209132B70" referredColumn="2C9139CF-A647-5159-31C4-878ADF455391"/>
+</associations>
+</Column>
+<Column name="LEKARSKY_PREDPIS_ID_Lekar" id="36DA0141-D989-B6B4-83B8-2ECA2B99F31B">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F238545-0A78-C779-3DE2-FBE209132B70" referredColumn="2C9264FD-F6F3-010A-4114-D3F05FDF11E0"/>
+</associations>
+</Column>
+<Column name="LEK_ID_Lek" id="F487DDB0-7921-9E9A-ACF2-CAF700119B7F">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5A31575E-196F-C615-8301-96AA00C5924D" referredColumn="03EB1FE9-9BA4-4D35-2767-A28F78521F4A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="521E3FEB-9AC0-D2E8-90D6-A434243EB721" name="LEKY_PREDPISY_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="868178D0-93AC-8D6D-1593-E2475BA63525"/>
+<colUsage columnID="36DA0141-D989-B6B4-83B8-2ECA2B99F31B"/>
+<colUsage columnID="F487DDB0-7921-9E9A-ACF2-CAF700119B7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D2742AC3-9E0E-F2B8-79B4-D00F6D509B5F" name="PREDPISY_LEK_PREDP_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>DE46E5D0-E5DB-A2F5-CF76-73B1E098CD40</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="868178D0-93AC-8D6D-1593-E2475BA63525"/>
+<colUsage columnID="36DA0141-D989-B6B4-83B8-2ECA2B99F31B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="56C58694-00B4-0D2B-BFE8-4EFD76B37470" name="LEKY_PREDPISY_LEK_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<generatorID>DE46E5D0-E5DB-A2F5-CF76-73B1E098CD40</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F487DDB0-7921-9E9A-ACF2-CAF700119B7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

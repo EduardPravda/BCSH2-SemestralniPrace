@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4587F5EB-885A-2DC6-3BD3-42B787A23380" name="VYSETRENI">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>C073F692-555C-04E8-6C7C-9B588A9799B1</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PACIENT_ID_Pacient" id="694F5382-0C5D-558D-B700-F03F860D1A85">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>33DF56B3-A4F8-E175-17B9-B3F828A7F13F</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1284EE66-EEC0-E2E9-123E-49030EA958AB" referredColumn="94E6C725-08B0-0EF9-F100-70CAD7533580"/>
+</associations>
+</Column>
+<Column name="ID_Vysetreni" id="21263B01-E06F-47BB-B031-6CEE9B1C3CD4">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>CEB9AA75-A4F8-1099-81AC-961D639F8694</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="typVysetreni" id="0E734A08-0931-43D9-D435-1F1557415A7E">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>3C29B0D4-D219-EAA4-9D09-A0A3CA325F93</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumVysetreni" id="9287832F-D1B4-B711-875E-69C94A1112C7">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>B3015094-FE2D-6FC2-271A-5318DFE6CC93</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="poznamka" id="892987D5-BC61-51DE-3A9F-24BD4B99ED60">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>9F2FAA90-6C4F-6AB8-ADB2-DC38EDC43022</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEKAR_ID_Lekar" id="2D933794-627C-169D-55E2-1FBC61C0B987">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-18 22:17:42 UTC</createdTime>
+<generatorID>8900ACD9-60E9-F6CA-F231-9D4535F8A148</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74B8A9AB-EDA9-AD58-1F06-215AE7A2270D" referredColumn="523161D6-0835-40EE-A6FB-70D3483A4DA7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A49C6E53-92CD-B870-607F-B7CA728C514F" name="VYSETRENI_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>06C6CA21-E7DC-0F25-4700-86FC8031ECA3</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21263B01-E06F-47BB-B031-6CEE9B1C3CD4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="656DE2A4-315B-FCB9-C536-D289BB469F1D" name="VYSETRENI_PACIENT_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-09 10:19:50 UTC</createdTime>
+<generatorID>61B555C3-1E71-824B-53CD-2F9CE36E3CF0</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="694F5382-0C5D-558D-B700-F03F860D1A85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5168F309-EE11-CD57-6C54-78456E0D0E90" name="VYSETRENI_LEKAR_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-18 22:17:42 UTC</createdTime>
+<generatorID>E3717F50-4007-92E0-020D-9FB4744F4218</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D933794-627C-169D-55E2-1FBC61C0B987"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

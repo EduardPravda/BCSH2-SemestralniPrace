@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="47E26B0C-3970-665B-3F8D-1D19830B7690" containerWithKeyObject="F4D2F38B-7938-43CB-834F-8FAD9C02543E" localFKIndex="3002F48D-1105-4B33-28B5-9A87C12A7B9E" name="LEKARSKY_PREDPIS_VYSETRENI_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:20:00 UTC</createdTime>
+<generatorID>2A4DFABD-5BF3-B0AC-938A-C599A309B708</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<referredTableLongName>VYSETRENI</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DE5191AB-3DC6-519A-6D77-9FE71FAD77B8</referredTableID>
+<keyObject>B3F96D6E-068E-8E8A-3784-BC430CE793BE</keyObject>
+<referredKeyID>B3F96D6E-068E-8E8A-3784-BC430CE793BE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Vysetreni</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

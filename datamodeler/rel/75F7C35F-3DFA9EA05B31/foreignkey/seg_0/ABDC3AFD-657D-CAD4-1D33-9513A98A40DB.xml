@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="ABDC3AFD-657D-CAD4-1D33-9513A98A40DB" containerWithKeyObject="E84BF3B0-CF36-B3A0-C4E0-5EBCD4FCD0F9" localFKIndex="2ADEE10A-324A-B640-A5B8-17069380FB1D" name="RODINNA_ANAMNEZA_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-03 19:19:59 UTC</createdTime>
+<generatorID>648E82B3-9321-8B4F-9590-79EB53EBF95E</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<referredTableLongName>ANAMNEZA</referredTableLongName>
+<arc>AB647CCF-29DC-229F-AD71-849C69B84A52</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9631A14D-8BC1-7CF8-4201-67022D2CD253</referredTableID>
+<keyObject>E14405F7-DB7B-FA43-9BF5-139C2ECF2B67</keyObject>
+<referredKeyID>E14405F7-DB7B-FA43-9BF5-139C2ECF2B67</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Anamneza</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

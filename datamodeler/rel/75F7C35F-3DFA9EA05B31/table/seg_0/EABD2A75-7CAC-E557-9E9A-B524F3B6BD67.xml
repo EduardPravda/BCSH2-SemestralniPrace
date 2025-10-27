@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EABD2A75-7CAC-E557-9E9A-B524F3B6BD67" name="NEMOC">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>B92794EA-C1D9-2183-9AF4-5B395B1659B1</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Nemoc" id="23FED445-92B6-8709-FD5F-CBA28C472565">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>4D9027D3-5189-191D-F559-9F8FFC9BD78B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazevNemoci" id="6887EA1D-4511-7032-B926-EE74709E903B">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>E4988616-1D0F-D3DA-39A8-E8B28F48378B</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datumDiagnozy" id="2B79C034-3E58-D5EF-BBE2-2634432EF267">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>9E485E93-39E3-F9BA-3217-2A63170D06B6</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stavNemoci" id="BFD1CFE0-0A33-66DA-035C-B9F259B5C2FB">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>1DA0F631-FEFF-4830-7023-424100C5EEB3</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ANAMNEZA_ID_Anamneza" id="D2D48E19-1FEF-4A24-9C10-374B1D7E3473">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>B785FAA3-8C80-3EF5-6806-AAF080785806</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E3AE9288-2B87-63AE-E5D4-171FA6DE5C8A" referredColumn="1D991CEF-E5B4-34F7-78EB-75A1801162F5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FE39F10D-9387-49CB-7A91-AA2953B92D4B" name="NEMOC_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>9F917CC6-948F-649F-1B9B-401FF0CC2177</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23FED445-92B6-8709-FD5F-CBA28C472565"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E4946CF6-09C7-B7D5-3FFD-E9E9D28622E0" name="NEMOC_ANAMNEZA_FK">
+<createdBy>eduar</createdBy>
+<createdTime>2024-12-04 12:26:53 UTC</createdTime>
+<generatorID>BA2A006C-3F94-4618-3CC8-AF304EA95688</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D2D48E19-1FEF-4A24-9C10-374B1D7E3473"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

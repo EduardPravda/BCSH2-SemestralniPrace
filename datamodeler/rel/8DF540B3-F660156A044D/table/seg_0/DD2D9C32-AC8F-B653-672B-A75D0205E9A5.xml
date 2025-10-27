@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD2D9C32-AC8F-B653-672B-A75D0205E9A5" name="SOUBOR">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:45:53 UTC</createdTime>
+<generatorID>FB8E6D21-5E95-8C7A-BD91-E747DD01B1AA</generatorID>
+<ownerDesignName>datamodeler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_soubor" id="E441E8D2-0414-13B3-0C17-BA35ECCEBA8D">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev_souboru" id="EDE33A6A-30CF-4323-307E-65568D16AF33">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="typ_souboru" id="EAF0EC3A-A064-C052-8DE0-66E193247244">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pripona" id="7925C5BC-5C5F-B5E6-41FF-71574964863A">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="binarni_data" id="27EED50F-241C-0E82-9951-FE4222DE2271">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum_nahrani" id="751AD93A-2286-0443-DA02-D3789EC4265A">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum_modifikace" id="753C9673-4B04-37F5-63EA-1BD627C55D50">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="uzivatel_id_uzivatel" id="59839648-9EB7-6983-DE84-375FA4CD052F">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E75B1491-6C64-A3B6-8D67-5C8F68953521" referredColumn="24B2FBC9-CD2A-1112-1738-253E5F6D129C"/>
+</associations>
+</Column>
+<Column name="popis" id="0D11BB7A-2E77-E628-7D44-CF550F2F7ABF">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B85D148E-9DCA-B89C-0D05-A23BA78CC67D" name="SOUBOR_PK">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 19:57:00 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E441E8D2-0414-13B3-0C17-BA35ECCEBA8D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4BFF9EC3-3612-D387-8E74-90C07AFB3438" name="FK_SOUBOR_UZIVATEL">
+<createdBy>eduar</createdBy>
+<createdTime>2025-10-25 20:43:03 UTC</createdTime>
+<ownerDesignName>datamodeler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59839648-9EB7-6983-DE84-375FA4CD052F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
