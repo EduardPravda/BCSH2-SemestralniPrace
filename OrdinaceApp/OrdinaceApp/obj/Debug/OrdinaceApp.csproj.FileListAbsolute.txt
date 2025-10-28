@@ -1,0 +1,9 @@
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\obj\Debug\OrdinaceApp.csproj.AssemblyReference.cache
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\obj\Debug\OrdinaceApp.Properties.Resources.resources
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\obj\Debug\OrdinaceApp.csproj.GenerateResource.cache
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\obj\Debug\OrdinaceApp.csproj.CoreCompileInputs.cache
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\bin\Debug\OrdinaceApp.exe.config
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\bin\Debug\OrdinaceApp.exe
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\bin\Debug\OrdinaceApp.pdb
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\obj\Debug\OrdinaceApp.exe
+F:\VŠ\BMOSI\Semestralky\Semestralka 1\OrdinaceApp\OrdinaceApp\obj\Debug\OrdinaceApp.pdb
