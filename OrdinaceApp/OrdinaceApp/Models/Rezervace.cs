@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrdinaceApp.Models
 {
@@ -10,7 +6,12 @@ namespace OrdinaceApp.Models
     {
         public int IdRezervace { get; set; }
         public DateTime DatumCas { get; set; }
-        public int IdPacient { get; set; }
+
+        public int PacientId { get; set; }
+        public Pacient? Pacient { get; set; }
+
+        public int LekarId { get; set; }
+        public Lekar? Lekar { get; set; }
 
         public override string ToString() => $"{DatumCas:dd.MM.yyyy HH:mm}";
     }

@@ -84,9 +84,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Adresa.cs" />
+    <Compile Include="Models\Alergie.cs" />
+    <Compile Include="Models\Anamneza.cs" />
+    <Compile Include="Models\Doporuceni.cs" />
     <Compile Include="Models\Lekar.cs" />
+    <Compile Include="Models\LekarskyPredpis.cs" />
+    <Compile Include="Models\OrdinacniDoba.cs" />
+    <Compile Include="Models\OsobniAnamneza.cs" />
     <Compile Include="Models\Pacient.cs" />
+    <Compile Include="Models\PracovniNeschopnost.cs" />
     <Compile Include="Models\Rezervace.cs" />
+    <Compile Include="Models\RodinnaAnamneza.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Soubor.cs" />
+    <Compile Include="Models\Uzivatel.cs" />
+    <Compile Include="Models\Vysetreni.cs" />
+    <Compile Include="Models\ZdravotniKarta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LekarService.cs" />
