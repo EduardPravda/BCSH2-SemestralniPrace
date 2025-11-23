@@ -1,41 +1,75 @@
 ﻿using System;
 using System.Windows;
+using OrdinaceApp1.Models;
 using OrdinaceApp1.DataAccess;
 
 namespace OrdinaceApp1
 {
-    /// <summary>
-    /// Interakční logika pro MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        // Vlastnost, kam si uložíme, kdo je přihlášený
+        public Uzivatel PrihlasenyUzivatel { get; private set; }
+
+        // Upravený konstruktor - vyžaduje uživatele!
+        public MainWindow(Uzivatel uzivatel)
         {
             InitializeComponent();
+
+            PrihlasenyUzivatel = uzivatel;
+
+            // Zobrazíme jméno v titulku okna
+            this.Title = $"IS Nemocnice - Přihlášen: {uzivatel.CeleJmeno} (Role ID: {uzivatel.RoleId})";
+
+            // Nastavíme práva (skryjeme tlačítka pro ne-adminy)
+            NastavitPrava();
         }
 
-        private void BtnNacist_Click(object sender, RoutedEventArgs e)
+        private void NastavitPrava()
+        {
+            // Příklad: Role 1 je Admin. Pokud není admin, skryjeme menu Administrace.
+            if (PrihlasenyUzivatel.RoleId != 1)
+            {
+                MenuAdmin.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        // --- OBSLUHA MENU ---
+
+        private void MenuOdhlasit_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new Views.LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
+
+        private void MenuUkoncit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void MenuPacientiSeznam_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // 1. Vytvoříme instanci repository
                 var repo = new PacientRepository();
-
-                // 2. Získáme data
                 var data = repo.GetPacientiPublic();
-
-                // 3. Naplníme tabulku
-                DgPacienti.ItemsSource = data;
-
-                // 4. Info pro uživatele
-                TxtStatus.Text = $"Načteno {data.Count} pacientů z Oracle DB.";
+                MainDataGrid.ItemsSource = data;
+                TxtStatus.Text = $"Načteno {data.Count} pacientů.";
             }
             catch (Exception ex)
             {
-                // Když se něco pokazí (špatné heslo, VPN nefunguje...)
-                MessageBox.Show("Chyba připojení: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                TxtStatus.Text = "Chyba!";
+                MessageBox.Show("Chyba při načítání: " + ex.Message);
             }
+        }
+
+        private void MenuPacientNovy_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Zde bude formulář pro vložení pacienta.");
+        }
+
+        private void MenuLog_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Zde bude historie logů (jen pro admina).");
         }
     }
 }
