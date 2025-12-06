@@ -4,10 +4,9 @@ using OrdinaceApp1.DataAccess;
 
 namespace OrdinaceApp1.Views
 {
-    public partial class LogWindow : Window
+    public partial class HistoryWindow : Window
     {
-        // Tady musí být konstruktor JEN JEDNOU
-        public LogWindow()
+        public HistoryWindow()
         {
             InitializeComponent();
             NacistLogy();

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows;
-using OrdinaceApp1.Models;
 using OrdinaceApp1.DataAccess;
+using OrdinaceApp1.Models;
+using OrdinaceApp1.Views;
 
 namespace OrdinaceApp1
 {
@@ -64,12 +65,18 @@ namespace OrdinaceApp1
 
         private void MenuPacientNovy_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Zde bude formulář pro vložení pacienta.");
+            NovyPacientWindow okno = new NovyPacientWindow();
+
+            okno.ShowDialog();
+
+            MenuPacientiSeznam_Click(null, null);
         }
 
         private void MenuLog_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Zde bude historie logů (jen pro admina).");
+            // Otevřeme nové okno s historií
+            var okno = new OrdinaceApp1.Views.HistoryWindow();
+            okno.ShowDialog();
         }
     }
 }
