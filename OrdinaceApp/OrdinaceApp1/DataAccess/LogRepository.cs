@@ -20,7 +20,6 @@ namespace OrdinaceApp1.DataAccess
 
             using (var conn = _database.GetConnection())
             {
-                // Seřadíme od nejnovějšího
                 string sql = "SELECT * FROM HISTORY_LOG ORDER BY cas_zmeny DESC";
 
                 using (var cmd = new OracleCommand(sql, conn))
@@ -36,7 +35,6 @@ namespace OrdinaceApp1.DataAccess
                                 TypOperace = reader["typ_operace"].ToString(),
                                 Uzivatel = reader["uzivatel"].ToString(),
                                 CasZmeny = Convert.ToDateTime(reader["cas_zmeny"]),
-                                // Ošetření null hodnot pro Stará/Nová hodnota
                                 StaraHodnota = reader["stara_hodnota"] == DBNull.Value ? "" : reader["stara_hodnota"].ToString(),
                                 NovaHodnota = reader["nova_hodnota"] == DBNull.Value ? "" : reader["nova_hodnota"].ToString()
                             };

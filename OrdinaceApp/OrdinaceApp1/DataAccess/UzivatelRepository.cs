@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic; 
 using Oracle.ManagedDataAccess.Client;
 using OrdinaceApp1.Models;
 
@@ -17,7 +18,6 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-
                 string sql = @"SELECT id_uzivatel, prihlasovaci_jmeno, jmeno, prijmeni, role_id_role, aktivni 
                                FROM UZIVATEL 
                                WHERE prihlasovaci_jmeno = :login 
@@ -26,7 +26,6 @@ namespace OrdinaceApp1.DataAccess
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
-
                     cmd.Parameters.Add(new OracleParameter("login", login));
                     cmd.Parameters.Add(new OracleParameter("heslo", heslo));
 
@@ -48,6 +47,33 @@ namespace OrdinaceApp1.DataAccess
                 }
             }
             return null;
+        }
+
+        public List<Uzivatel> GetVsechnyUzivatele()
+        {
+            var list = new List<Uzivatel>();
+            using (var conn = _database.GetConnection())
+            {
+                string sql = "SELECT id_uzivatel, jmeno, prijmeni, role_id_role FROM UZIVATEL ORDER BY prijmeni";
+
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new Uzivatel
+                            {
+                                IdUzivatel = Convert.ToInt32(reader["id_uzivatel"]),
+                                Jmeno = reader["jmeno"].ToString(),
+                                Prijmeni = reader["prijmeni"].ToString(),
+                                RoleId = Convert.ToInt32(reader["role_id_role"])
+                            });
+                        }
+                    }
+                }
+            }
+            return list;
         }
     }
 }

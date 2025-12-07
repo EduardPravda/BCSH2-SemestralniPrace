@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using OrdinaceApp1.DataAccess;
+using OrdinaceApp1.Models; 
 
 namespace OrdinaceApp1.Views
 {
@@ -9,56 +10,68 @@ namespace OrdinaceApp1.Views
         public NovyPacientWindow()
         {
             InitializeComponent();
-            // Nastavíme výchozí datum, aby pole nebylo prázdné
+
             DpDatumNarozeni.SelectedDate = DateTime.Now.AddYears(-20);
+
+            NacistUzivatele();
+        }
+
+        private void NacistUzivatele()
+        {
+            try
+            {
+                var repo = new UzivatelRepository();
+                CmbUzivatele.ItemsSource = repo.GetVsechnyUzivatele();
+
+                if (CmbUzivatele.Items.Count > 0)
+                {
+                    CmbUzivatele.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Chyba při načítání seznamu uživatelů: " + ex.Message);
+            }
         }
 
         private void BtnUlozit_Click(object sender, RoutedEventArgs e)
         {
-            // --- 1. VALIDACE VSTUPŮ (Splnění bodu 8 - Formuláře) ---
             if (string.IsNullOrWhiteSpace(TxtJmeno.Text) ||
                 string.IsNullOrWhiteSpace(TxtPrijmeni.Text) ||
-                string.IsNullOrWhiteSpace(TxtMesto.Text))
+                string.IsNullOrWhiteSpace(TxtMesto.Text) ||
+                TxtPsc.Text.Length != 5)
             {
-                MessageBox.Show("Jméno, příjmení a město jsou povinné údaje.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Vyplňte prosím všechna pole správně (PSČ 5 čísel).", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            if (TxtPsc.Text.Length != 5)
+            if (CmbUzivatele.SelectedValue == null)
             {
-                MessageBox.Show("PSČ musí mít přesně 5 znaků.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Musíte vybrat uživatele ze seznamu.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
+            int vybraneId = (int)CmbUzivatele.SelectedValue;
 
             try
             {
-                // --- 2. PŘÍPRAVA DAT ---
-                string jmeno = TxtJmeno.Text;
-                string prijmeni = TxtPrijmeni.Text;
-                DateTime datum = DpDatumNarozeni.SelectedDate ?? DateTime.Now;
-                string ulice = TxtUlice.Text;
-                string mesto = TxtMesto.Text;
-                string psc = TxtPsc.Text;
-
-                // Kontrola, zda je ID uživatele číslo
-                if (!int.TryParse(TxtUserId.Text, out int userId))
-                {
-                    MessageBox.Show("ID Uživatele musí být číslo.");
-                    return;
-                }
-
-                // --- 3. ULOŽENÍ DO DB PŘES REPOZITÁŘ (Volá SP_Novy_Pacient) ---
                 var repo = new PacientRepository();
-                repo.PridatPacienta(jmeno, prijmeni, datum, ulice, mesto, psc, userId);
+                repo.PridatPacienta(
+                    TxtJmeno.Text,
+                    TxtPrijmeni.Text,
+                    DpDatumNarozeni.SelectedDate ?? DateTime.Now,
+                    TxtUlice.Text,
+                    TxtMesto.Text,
+                    TxtPsc.Text,
+                    vybraneId 
+                );
 
-                // Úspěch
                 MessageBox.Show("Pacient byl úspěšně uložen!", "Hotovo", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close(); // Zavře okno
+                this.Close();
             }
             catch (Exception ex)
             {
-                // Pokud databáze vrátí chybu (např. neexistující User ID)
-                MessageBox.Show($"Chyba při ukládání: {ex.Message}", "Chyba DB", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba databáze:\n{ex.Message}\n\n(Pozor: Jeden uživatel může mít jen jednu kartu pacienta!)", "Chyba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

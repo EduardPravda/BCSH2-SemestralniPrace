@@ -1,35 +1,48 @@
 ﻿using System;
 using System.Windows;
 using OrdinaceApp1.DataAccess;
+using OrdinaceApp1.Models;
 
 namespace OrdinaceApp1.Views
 {
-    public partial class LogWindow : Window
+    public partial class LoginWindow : Window
     {
-        // Tady musí být konstruktor JEN JEDNOU
-        public LogWindow()
+        public LoginWindow()
         {
             InitializeComponent();
-            NacistLogy();
         }
 
-        private void NacistLogy()
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
+            string login = TxtLogin.Text;
+            string heslo = TxtHeslo.Password;
+
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(heslo))
+            {
+                TxtChyba.Text = "Zadejte jméno a heslo.";
+                return;
+            }
+
             try
             {
-                var repo = new LogRepository();
-                var data = repo.GetLogs();
-                LogDataGrid.ItemsSource = data;
+                var repo = new UzivatelRepository();
+                var uzivatel = repo.OveritUzivatele(login, heslo);
+
+                if (uzivatel != null)
+                {
+                    var main = new OrdinaceApp1.MainWindow(uzivatel);
+                    main.Show();
+                    this.Close();
+                }
+                else
+                {
+                    TxtChyba.Text = "Chybné jméno nebo heslo.";
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Chyba při načítání logů: " + ex.Message);
+                TxtChyba.Text = "Chyba databáze: " + ex.Message;
             }
-        }
-
-        private void BtnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -8,37 +8,30 @@ namespace OrdinaceApp1
 {
     public partial class MainWindow : Window
     {
-        // Vlastnost, kam si uložíme, kdo je přihlášený
         public Uzivatel PrihlasenyUzivatel { get; private set; }
 
-        // Upravený konstruktor - vyžaduje uživatele!
         public MainWindow(Uzivatel uzivatel)
         {
             InitializeComponent();
 
             PrihlasenyUzivatel = uzivatel;
 
-            // Zobrazíme jméno v titulku okna
             this.Title = $"IS Nemocnice - Přihlášen: {uzivatel.CeleJmeno} (Role ID: {uzivatel.RoleId})";
 
-            // Nastavíme práva (skryjeme tlačítka pro ne-adminy)
             NastavitPrava();
         }
 
         private void NastavitPrava()
         {
-            // Příklad: Role 1 je Admin. Pokud není admin, skryjeme menu Administrace.
             if (PrihlasenyUzivatel.RoleId != 1)
             {
-                MenuAdmin.Visibility = Visibility.Collapsed;
+                if (MenuAdmin != null) MenuAdmin.Visibility = Visibility.Collapsed;
             }
         }
 
-        // --- OBSLUHA MENU ---
-
         private void MenuOdhlasit_Click(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new Views.LoginWindow();
+            var loginWindow = new OrdinaceApp1.Views.LoginWindow();
             loginWindow.Show();
             this.Close();
         }
@@ -65,18 +58,57 @@ namespace OrdinaceApp1
 
         private void MenuPacientNovy_Click(object sender, RoutedEventArgs e)
         {
-            NovyPacientWindow okno = new NovyPacientWindow();
-
+            var okno = new OrdinaceApp1.Views.NovyPacientWindow();
             okno.ShowDialog();
-
             MenuPacientiSeznam_Click(null, null);
         }
 
-        private void MenuLog_Click(object sender, RoutedEventArgs e)
+        private void MenuSoubory_Click(object sender, RoutedEventArgs e)
         {
-            // Otevřeme nové okno s historií
-            var okno = new OrdinaceApp1.Views.HistoryWindow();
+            var okno = new OrdinaceApp1.Views.SouboryWindow(PrihlasenyUzivatel.IdUzivatel);
             okno.ShowDialog();
         }
+
+       private void MenuReport_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var repo = new PacientRepository();
+                string report = repo.GenerovatReportAlergii();
+
+                if (string.IsNullOrEmpty(report))
+                {
+                    MessageBox.Show("Report je prázdný.");
+                }
+                else
+                {
+                    MessageBox.Show(report, "Report Alergiků (Explicitní kurzor)");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Chyba při generování reportu: " + ex.Message);
+            }
+        }
+
+            private void MenuLog_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.AuditWindow();
+            okno.ShowDialog();
+        }
+
+        private void MenuSystem_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.SystemWindow();
+            okno.ShowDialog();
+        }
+
+        /*
+        private void MenuLekari_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.LekariWindow();
+            okno.ShowDialog();
+        }
+        */
     }
 }

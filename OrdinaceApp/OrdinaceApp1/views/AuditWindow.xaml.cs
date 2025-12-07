@@ -1,28 +1,29 @@
 ﻿using System;
 using System.Windows;
-using OrdinaceApp1.DataAccess;
+using OrdinaceApp1.DataAccess; 
 
 namespace OrdinaceApp1.Views
 {
-    public partial class HistoryWindow : Window
+    public partial class AuditWindow : Window
     {
-        public HistoryWindow()
+        public AuditWindow()
         {
             InitializeComponent();
-            NacistLogy();
+            NacistData();
         }
 
-        private void NacistLogy()
+        private void NacistData()
         {
             try
             {
                 var repo = new LogRepository();
                 var data = repo.GetLogs();
-                LogDataGrid.ItemsSource = data;
+
+                DgAudit.ItemsSource = data;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Chyba při načítání logů: " + ex.Message);
+                MessageBox.Show("Nepodařilo se načíst historii:\n" + ex.Message, "Chyba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

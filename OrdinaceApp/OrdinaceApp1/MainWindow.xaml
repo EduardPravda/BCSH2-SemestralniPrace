@@ -20,10 +20,14 @@
             <MenuItem Header="Pacienti">
                 <MenuItem Header="Seznam pacientů" Click="MenuPacientiSeznam_Click"/>
                 <MenuItem Header="Přidat nového pacienta" Click="MenuPacientNovy_Click"/>
+                <Separator/>
+                <MenuItem Header="Report alergiků (Explicitní kurzor)" Click="MenuReport_Click"/>
+                <MenuItem Header="Správa souborů / Dokumenty" Click="MenuSoubory_Click"/>
             </MenuItem>
 
             <MenuItem Name="MenuAdmin" Header="Administrace">
-                <MenuItem Header="Log historie" Click="MenuLog_Click"/>
+                <MenuItem Header="Log historie (Audit)" Click="MenuLog_Click"/>
+                <MenuItem Header="Systémový katalog (DB Objekty)" Click="MenuSystem_Click"/>
                 <MenuItem Header="Správa uživatelů"/>
             </MenuItem>
         </Menu>
