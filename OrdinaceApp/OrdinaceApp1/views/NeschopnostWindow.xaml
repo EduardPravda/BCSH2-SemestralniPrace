@@ -1,0 +1,32 @@
+﻿<Window x:Class="OrdinaceApp1.Views.NeschopnostWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pracovní neschopnosti" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="EVIDENCE NESCHOPENEK" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+            <Button Content="➕ Vystavit neschopenku" Margin="20,0,0,0" Padding="10,5" Click="BtnPridat_Click"/>
+        </StackPanel>
+
+        <DataGrid Name="DgNeschopnosti" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFF0F5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Začátek" Binding="{Binding Zacatek, StringFormat={}{0:dd.MM.yyyy}}" Width="90"/>
+                <DataGridTextColumn Header="Konec" Binding="{Binding Konec, StringFormat={}{0:dd.MM.yyyy}}" Width="90"/>
+                <DataGridTextColumn Header="Pacient" Binding="{Binding PacientJmeno}" Width="140" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Důvod" Binding="{Binding Duvod}" Width="*"/>
+                <DataGridTextColumn Header="Lékař" Binding="{Binding LekarJmeno}" Width="140"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="🗑️ Smazat" Width="100" Height="30" Click="BtnSmazat_Click"/>
+            <Button Content="Zavřít" Width="80" Height="30" Margin="20,0,0,0" Click="BtnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

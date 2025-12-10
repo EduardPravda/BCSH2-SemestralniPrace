@@ -65,5 +65,69 @@ namespace OrdinaceApp1.DataAccess
                 }
             }
         }
+ 
+        public void SmazatSoubor(int idSoubor)
+        {
+            using (var conn = _database.GetConnection())
+            {
+                string sql = "DELETE FROM SOUBOR WHERE id_soubor = :id";
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.Parameters.Add("id", idSoubor);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public Soubor GetSouborData(int idSoubor)
+        {
+            using (var conn = _database.GetConnection())
+            {
+                string sql = "SELECT nazev_souboru, binarni_data FROM SOUBOR WHERE id_soubor = :id";
+
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.Parameters.Add("id", idSoubor);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var s = new Soubor();
+                            s.IdSoubor = idSoubor;
+                            s.Nazev = reader["nazev_souboru"].ToString();
+
+                            if (reader["binarni_data"] != DBNull.Value)
+                            {
+                                s.Data = (byte[])reader["binarni_data"];
+                            }
+
+                            return s;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public void UpravitSoubor(int idSoubor, string novyNazev, string novyPopis)
+        {
+            using (var conn = _database.GetConnection())
+            {
+                string sql = @"UPDATE SOUBOR SET 
+                               nazev_souboru = :nazev, 
+                               popis = :popis,
+                               datum_modifikace = SYSDATE 
+                               WHERE id_soubor = :id";
+
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.Parameters.Add("nazev", novyNazev);
+                    cmd.Parameters.Add("popis", novyPopis);
+                    cmd.Parameters.Add("id", idSoubor);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

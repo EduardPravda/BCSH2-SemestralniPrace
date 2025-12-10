@@ -1,0 +1,18 @@
+﻿<Window x:Class="OrdinaceApp1.Views.AlergieDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nová alergie" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="PŘIŘAZENÍ ALERGIE" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Pacient:"/>
+            <ComboBox Name="CmbPacient" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdPacient" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Název alergie (např. Prach, pyl, lepek):"/>
+            <TextBox Name="TxtNazev" Margin="0,0,0,20"/>
+
+            <Button Content="💾 Uložit" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

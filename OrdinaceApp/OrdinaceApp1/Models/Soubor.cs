@@ -15,5 +15,6 @@ namespace OrdinaceApp1.Models
         public DateTime DatumNahrani { get; set; }
         public string Popis { get; set; }
         public int IdUzivatel { get; set; }
+        public byte[] Data { get; internal set; }
     }
 }

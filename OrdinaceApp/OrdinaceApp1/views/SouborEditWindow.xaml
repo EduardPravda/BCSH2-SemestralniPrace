@@ -1,0 +1,18 @@
+﻿<Window x:Class="OrdinaceApp1.Views.SouborEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Úprava souboru" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="EDITACE SOUBORU" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Název souboru (včetně přípony):"/>
+            <TextBox Name="TxtNazev" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Popis souboru:"/>
+            <TextBox Name="TxtPopis" Margin="0,0,0,20"/>
+
+            <Button Content="💾 Uložit změny" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

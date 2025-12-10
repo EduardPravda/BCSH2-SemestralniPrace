@@ -1,0 +1,30 @@
+﻿<Window x:Class="OrdinaceApp1.Views.RezervaceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kalendář rezervací" Height="500" Width="700" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="OBJEDNANÍ PACIENTI" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+            <Button Content="➕ Nová rezervace" Margin="20,0,0,0" Padding="10,5" Click="BtnPridat_Click"/>
+        </StackPanel>
+
+        <DataGrid Name="DgRezervace" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Background="#E0FFFF">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Datum a Čas" Binding="{Binding DatumFormat}" Width="120" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Pacient" Binding="{Binding PacientJmeno}" Width="150"/>
+                <DataGridTextColumn Header="Lékař" Binding="{Binding LekarJmeno}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="🗑️ Zrušit rezervaci" Width="120" Height="30" Click="BtnSmazat_Click"/>
+            <Button Content="Zavřít" Width="80" Height="30" Margin="20,0,0,0" Click="BtnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

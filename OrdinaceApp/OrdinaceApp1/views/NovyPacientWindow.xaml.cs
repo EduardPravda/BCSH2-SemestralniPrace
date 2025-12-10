@@ -1,19 +1,29 @@
 ﻿using System;
 using System.Windows;
 using OrdinaceApp1.DataAccess;
-using OrdinaceApp1.Models; 
+using OrdinaceApp1.Models;
 
 namespace OrdinaceApp1.Views
 {
     public partial class NovyPacientWindow : Window
     {
+        private int _idPacientEdit = 0; 
+
         public NovyPacientWindow()
         {
             InitializeComponent();
+            NacistUzivatele();
+            this.Title = "Přidat nového pacienta";
+        }
 
-            DpDatumNarozeni.SelectedDate = DateTime.Now.AddYears(-20);
+        public NovyPacientWindow(int idPacient)
+        {
+            InitializeComponent();
+            _idPacientEdit = idPacient;
+            this.Title = "Upravit pacienta";
 
             NacistUzivatele();
+            NacistDataPacienta(idPacient);
         }
 
         private void NacistUzivatele()
@@ -22,56 +32,75 @@ namespace OrdinaceApp1.Views
             {
                 var repo = new UzivatelRepository();
                 CmbUzivatele.ItemsSource = repo.GetVsechnyUzivatele();
+            }
+            catch { }
+        }
 
-                if (CmbUzivatele.Items.Count > 0)
+        private void NacistDataPacienta(int id)
+        {
+            try
+            {
+                var repo = new PacientRepository();
+                var p = repo.GetPacientDetail(id); 
+
+                if (p != null)
                 {
-                    CmbUzivatele.SelectedIndex = 0;
+                    TxtJmeno.Text = p.Jmeno;
+                    TxtPrijmeni.Text = p.Prijmeni;
+                    TxtMesto.Text = p.Mesto;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Chyba při načítání seznamu uživatelů: " + ex.Message);
+                MessageBox.Show("Chyba při načítání dat: " + ex.Message);
             }
         }
 
         private void BtnUlozit_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TxtJmeno.Text) ||
-                string.IsNullOrWhiteSpace(TxtPrijmeni.Text) ||
-                string.IsNullOrWhiteSpace(TxtMesto.Text) ||
-                TxtPsc.Text.Length != 5)
+            if (string.IsNullOrWhiteSpace(TxtJmeno.Text) || CmbUzivatele.SelectedValue == null)
             {
-                MessageBox.Show("Vyplňte prosím všechna pole správně (PSČ 5 čísel).", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Vyplňte jméno a uživatele.");
                 return;
             }
 
-            if (CmbUzivatele.SelectedValue == null)
-            {
-                MessageBox.Show("Musíte vybrat uživatele ze seznamu.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            int vybraneId = (int)CmbUzivatele.SelectedValue;
+            int idUzivatel = (int)CmbUzivatele.SelectedValue;
 
             try
             {
                 var repo = new PacientRepository();
-                repo.PridatPacienta(
-                    TxtJmeno.Text,
-                    TxtPrijmeni.Text,
-                    DpDatumNarozeni.SelectedDate ?? DateTime.Now,
-                    TxtUlice.Text,
-                    TxtMesto.Text,
-                    TxtPsc.Text,
-                    vybraneId 
-                );
 
-                MessageBox.Show("Pacient byl úspěšně uložen!", "Hotovo", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (_idPacientEdit == 0)
+                {
+                    repo.PridatPacienta(
+                        TxtJmeno.Text,
+                        TxtPrijmeni.Text,
+                        DpDatumNarozeni.SelectedDate ?? DateTime.Now,
+                        TxtUlice.Text,
+                        TxtMesto.Text,
+                        TxtPsc.Text,
+                        idUzivatel
+                    );
+                }
+                else
+                {
+                    var p = new Pacient
+                    {
+                        IdPacient = _idPacientEdit,
+                        Jmeno = TxtJmeno.Text,
+                        Prijmeni = TxtPrijmeni.Text,
+                        Mesto = TxtMesto.Text
+                    };
+
+                    repo.UpravitPacienta(p, idUzivatel);
+                }
+
+                MessageBox.Show("Uloženo.");
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Chyba databáze:\n{ex.Message}\n\n(Pozor: Jeden uživatel může mít jen jednu kartu pacienta!)", "Chyba", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Chyba: " + ex.Message);
             }
         }
     }

@@ -1,0 +1,24 @@
+﻿<Window x:Class="OrdinaceApp1.Views.DoporuceniDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nová žádanka" Height="350" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="ŽÁDANKA KE SPECIALISTOVI" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" FontSize="16"/>
+
+            <TextBlock Text="Pacient:"/>
+            <ComboBox Name="CmbPacient" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdPacient" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Doporučující lékař:"/>
+            <ComboBox Name="CmbLekar" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdLekar" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Datum vystavení:"/>
+            <DatePicker Name="DpDatum" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Důvod doporučení / Požadované vyšetření:"/>
+            <TextBox Name="TxtDuvod" Height="60" TextWrapping="Wrap" Margin="0,0,0,20"/>
+
+            <Button Content="💾 Vystavit doporučení" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

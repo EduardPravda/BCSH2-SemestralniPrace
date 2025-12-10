@@ -103,6 +103,87 @@ namespace OrdinaceApp1
             okno.ShowDialog();
         }
 
+        private void MenuLeky_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.LekyWindow();
+            okno.ShowDialog();
+        }
+        
+        private void MenuSpravaLekaru_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.SpravaLekaruWindow();
+            okno.ShowDialog();
+        }
+
+        private void MenuVysetreni_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.VysetreniWindow();
+            okno.ShowDialog();
+        }
+        private void MenuSpravaUzivatelu_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.SpravaUzivateluWindow();
+            okno.ShowDialog();
+        }
+        private void MenuPredpisy_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.PredpisyWindow();
+            okno.ShowDialog();
+        }
+        private void MenuNeschopnost_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.NeschopnostWindow();
+            okno.ShowDialog();
+        }
+        private void MenuNemoci_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.NemocWindow();
+            okno.ShowDialog();
+        }
+        private void MenuOrdinace_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.OrdinacniDobaWindow();
+            okno.ShowDialog();
+        }
+        private void MenuRezervace_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.RezervaceWindow();
+            okno.ShowDialog();
+        }
+        private void MenuDoporuceni_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.DoporuceniWindow();
+            okno.ShowDialog();
+        }
+        private void MenuAlergie_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.AlergieWindow();
+            okno.ShowDialog();
+        }
+        private void MenuRole_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.RoleWindow();
+            okno.ShowDialog();
+        }
+        private void MenuAnamneza_Click(object sender, RoutedEventArgs e)
+        {
+            var okno = new OrdinaceApp1.Views.AnamnezaWindow();
+            okno.ShowDialog();
+        }
+        private void MenuPacientUpravit_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainDataGrid.SelectedItem is Pacient vybranyPacient)
+            {
+                var okno = new OrdinaceApp1.Views.NovyPacientWindow(vybranyPacient.IdPacient);
+                okno.ShowDialog();
+
+                MenuPacientiSeznam_Click(null, null);
+            }
+            else
+            {
+                MessageBox.Show("Nejprve označte pacienta v seznamu (klikněte na řádek).");
+            }
+        }
         /*
         private void MenuLekari_Click(object sender, RoutedEventArgs e)
         {

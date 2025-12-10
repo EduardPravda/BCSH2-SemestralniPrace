@@ -1,0 +1,27 @@
+﻿<Window x:Class="OrdinaceApp1.Views.NeschopnostDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Vystavení neschopenky" Height="450" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="NOVÁ NESCHOPENKA" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" FontSize="16"/>
+
+            <TextBlock Text="Pacient:"/>
+            <ComboBox Name="CmbPacient" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdPacient" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Vystavil lékař:"/>
+            <ComboBox Name="CmbLekar" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdLekar" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Začátek neschopnosti:"/>
+            <DatePicker Name="DpZacatek" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Předpokládaný konec (lze nechat prázdné):"/>
+            <DatePicker Name="DpKonec" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Důvod / Diagnóza:"/>
+            <TextBox Name="TxtDuvod" Height="60" TextWrapping="Wrap" Margin="0,0,0,20"/>
+
+            <Button Content="💾 Vystavit" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

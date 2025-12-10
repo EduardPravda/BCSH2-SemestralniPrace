@@ -1,0 +1,33 @@
+﻿<Window x:Class="OrdinaceApp1.Views.SpravaUzivateluWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Správa uživatelů" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="UŽIVATELSKÉ ÚČTY" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+            <Button Content="➕ Nový uživatel" Margin="20,0,0,0" Padding="10,5" Click="BtnPridat_Click"/>
+        </StackPanel>
+
+        <DataGrid Name="DgUzivatele" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Background="#F0F0F0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Login" Binding="{Binding PrihlasovaciJmeno}" Width="100" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" Width="100"/>
+                <DataGridTextColumn Header="Příjmení" Binding="{Binding Prijmeni}" Width="120"/>
+                <DataGridTextColumn Header="Role ID" Binding="{Binding RoleId}" Width="60"/>
+                <DataGridTextColumn Header="Aktivní" Binding="{Binding Aktivni}" Width="60"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="✏️ Upravit / Změnit heslo" Width="160" Height="30" Margin="0,0,10,0" Click="BtnUpravit_Click"/>
+            <Button Content="🗑️ Smazat účet" Width="120" Height="30" Click="BtnSmazat_Click"/>
+            <Button Content="Zavřít" Width="80" Height="30" Margin="20,0,0,0" Click="BtnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

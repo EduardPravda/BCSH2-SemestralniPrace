@@ -1,0 +1,18 @@
+﻿<Window x:Class="OrdinaceApp1.Views.NemocDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Diagnóza" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="ÚDAJE O DIAGNÓZE" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Název nemoci (Diagnóza):"/>
+            <TextBox Name="TxtNazev" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Popis / Stav / Kód:"/>
+            <TextBox Name="TxtPopis" Height="60" TextWrapping="Wrap" Margin="0,0,0,20"/>
+
+            <Button Content="💾 Uložit" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

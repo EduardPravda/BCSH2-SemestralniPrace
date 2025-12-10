@@ -1,0 +1,41 @@
+﻿<Window x:Class="OrdinaceApp1.Views.OrdinacniDobaDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nastavení ordinační doby" Height="350" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="NOVÝ ROZPIS" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Lékař:"/>
+            <ComboBox Name="CmbLekar" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdLekar" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Den v týdnu:"/>
+            <ComboBox Name="CmbDen" Margin="0,0,0,10">
+                <ComboBoxItem Content="Pondělí"/>
+                <ComboBoxItem Content="Úterý"/>
+                <ComboBoxItem Content="Středa"/>
+                <ComboBoxItem Content="Čtvrtek"/>
+                <ComboBoxItem Content="Pátek"/>
+                <ComboBoxItem Content="Sobota"/>
+                <ComboBoxItem Content="Neděle"/>
+            </ComboBox>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                    <TextBlock Text="Od (HH:MM):"/>
+                    <TextBox Name="TxtOd" Text="08:00"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Text="Do (HH:MM):"/>
+                    <TextBox Name="TxtDo" Text="16:00"/>
+                </StackPanel>
+            </Grid>
+
+            <Button Content="💾 Uložit" Height="40" Margin="0,20,0,0" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="OrdinaceApp1.Views.AnamnezaDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Záznam anamnézy" Height="350" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="PŘIDAT ANAMNÉZU" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Pacient:"/>
+            <ComboBox Name="CmbPacient" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdPacient" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Typ záznamu:"/>
+            <ComboBox Name="CmbTyp" Margin="0,0,0,10">
+                <ComboBoxItem Content="Osobní anamnéza"/>
+                <ComboBoxItem Content="Rodinná anamnéza"/>
+            </ComboBox>
+
+            <TextBlock Text="Datum záznamu:"/>
+            <DatePicker Name="DpDatum" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Popis (Nemoci, operace, genetická rizika...):"/>
+            <TextBox Name="TxtPoznamky" Height="60" TextWrapping="Wrap" Margin="0,0,0,20"/>
+
+            <Button Content="💾 Uložit záznam" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

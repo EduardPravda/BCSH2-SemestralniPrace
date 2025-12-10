@@ -1,0 +1,38 @@
+﻿<Window x:Class="OrdinaceApp1.Views.PredpisDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nový recept" Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="VYSTAVENÍ RECEPTU" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20" FontSize="16"/>
+
+            <TextBlock Text="Pacient:" FontWeight="Bold"/>
+            <ComboBox Name="CmbPacient" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdPacient" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Lék:" FontWeight="Bold"/>
+            <ComboBox Name="CmbLek" DisplayMemberPath="Nazev" SelectedValuePath="IdLek" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Předepisující lékař:" FontWeight="Bold"/>
+            <ComboBox Name="CmbLekar" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdLekar" Margin="0,0,0,10" Padding="5"/>
+
+            <Separator Margin="0,10"/>
+
+            <TextBlock Text="Datum vydání:"/>
+            <DatePicker Name="DpDatum" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Dávkování (např. 1-0-1):"/>
+            <TextBox Name="TxtDavkovani" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Délka léčby (např. 7 dní):"/>
+            <TextBox Name="TxtDelka" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Poznámka / Instrukce:"/>
+            <TextBox Name="TxtPoznamka" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="0,0,0,20" Padding="5"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="💾 Vydat Recept" Width="120" Height="40" Click="BtnUlozit_Click" FontWeight="Bold" Background="#DDDDDD"/>
+                <Button Content="Zrušit" Width="80" Height="40" Margin="10,0,0,0" Click="BtnZrusit_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -8,6 +8,7 @@ namespace OrdinaceApp1.Models
 {
     public class Pacient
     {
+        public int IdPacient { get; set; }  /*K tabulce VYSETRENI */
         public string Jmeno { get; set; }
         public string Prijmeni { get; set; }
         public string Telefon { get; set; }

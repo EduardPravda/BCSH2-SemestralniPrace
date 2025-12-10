@@ -93,30 +93,166 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Alergie.cs" />
+    <Compile Include="DataAccess\AlergieRepository.cs" />
+    <Compile Include="Models\Anamneza.cs" />
+    <Compile Include="DataAccess\AnamnezaRepository.cs" />
+    <Compile Include="Models\Doporuceni.cs" />
+    <Compile Include="DataAccess\DoporuceniRepository.cs" />
     <Compile Include="DataAccess\LekarRepository.cs" />
+    <Compile Include="DataAccess\LekRepositorycs.cs" />
     <Compile Include="DataAccess\LogRepository.cs" />
+    <Compile Include="Models\Nemoc.cs" />
+    <Compile Include="DataAccess\NemocRepository.cs" />
+    <Compile Include="Models\Neschopnost.cs" />
+    <Compile Include="DataAccess\NeschopnostRepository.cs" />
+    <Compile Include="Models\OrdinacniDoba.cs" />
+    <Compile Include="DataAccess\OrdinacniDobaRepository.cs" />
+    <Compile Include="DataAccess\PredpisRepository.cs" />
+    <Compile Include="Models\Rezervace.cs" />
+    <Compile Include="DataAccess\RezervaceRepository.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="DataAccess\RoleRepository.cs" />
     <Compile Include="DataAccess\SouborRepository.cs" />
     <Compile Include="DataAccess\SystemRepository.cs" />
+    <Compile Include="DataAccess\VysetreniRepository.cs" />
     <Compile Include="Models\DbObject.cs" />
+    <Compile Include="Models\Lek.cs" />
     <Compile Include="Models\Lekar.cs" />
     <Compile Include="Models\LogPolozka.cs" />
+    <Compile Include="Models\Predpis.cs" />
     <Compile Include="Models\Soubor.cs" />
+    <Compile Include="Models\Vysetreni.cs" />
+    <Compile Include="Views\AlergieDetailWindow.xaml.cs">
+      <DependentUpon>AlergieDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlergieWindow.xaml.cs">
+      <DependentUpon>AlergieWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AnamnezaDetailWindow.xaml.cs">
+      <DependentUpon>AnamnezaDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AnamnezaWindow.xaml.cs">
+      <DependentUpon>AnamnezaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AuditWindow.xaml.cs">
       <DependentUpon>AuditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoporuceniDetailWindow.xaml.cs">
+      <DependentUpon>DoporuceniDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoporuceniWindow.xaml.cs">
+      <DependentUpon>DoporuceniWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LekariDetailWindow.xaml.cs">
+      <DependentUpon>LekariDetailWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LekariWindow.xaml.cs">
       <DependentUpon>LekariWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LekDetailWindow.xaml.cs">
+      <DependentUpon>LekDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LekyWindow.xaml.cs">
+      <DependentUpon>LekyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NemocDetailWindow.xaml.cs">
+      <DependentUpon>NemocDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NemocWindow.xaml.cs">
+      <DependentUpon>NemocWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NeschopnostDetailWindow.xaml.cs">
+      <DependentUpon>NeschopnostDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NeschopnostWindow.xaml.cs">
+      <DependentUpon>NeschopnostWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NovyPacientWindow.xaml.cs">
       <DependentUpon>NovyPacientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrdinacniDobaDetailWindow.xaml.cs">
+      <DependentUpon>OrdinacniDobaDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrdinacniDobaWindow.xaml.cs">
+      <DependentUpon>OrdinacniDobaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PredpisDetailWindow.xaml.cs">
+      <DependentUpon>PredpisDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PredpisWindow.xaml.cs">
+      <DependentUpon>PredpisWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RezervaceDetailWindow.xaml.cs">
+      <DependentUpon>RezervaceDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RezervaceWindow.xaml.cs">
+      <DependentUpon>RezervaceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoleWindow.xaml.cs">
+      <DependentUpon>RoleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SouborEditWindow.xaml.cs">
+      <DependentUpon>SouborEditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SouboryWindow.xaml.cs">
       <DependentUpon>SouboryWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SpravaLekaruWindow.xaml.cs">
+      <DependentUpon>SpravaLekaruWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpravaUzivateluWindow.xaml.cs">
+      <DependentUpon>SpravaUzivateluWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SystemWindow.xaml.cs">
       <DependentUpon>SystemWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\VysetreniDetailWindow.xaml.cs">
+      <DependentUpon>VysetreniDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VysetreniWindow.xaml.cs">
+      <DependentUpon>VysetreniWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UzivatelDetailWindow.xaml.cs">
+      <DependentUpon>UzivatelDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AlergieDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AlergieWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AnamnezaDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AnamnezaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoporuceniDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoporuceniWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LekariDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LekariWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LekDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LekyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,7 +268,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataAccess\Database.cs" />
+    <Compile Include="Models\Database.cs" />
     <Compile Include="DataAccess\PacientRepository.cs" />
     <Compile Include="DataAccess\UzivatelRepository.cs" />
     <Compile Include="Views\LoginWindow.xaml.cs">
@@ -146,7 +282,55 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\NemocDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NemocWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NeschopnostDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NeschopnostWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NovyPacientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrdinacniDobaDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrdinacniDobaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PredpisDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PredpisWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RezervaceDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RezervaceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RoleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SouborEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,7 +338,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SpravaLekaruWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpravaUzivateluWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SystemWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VysetreniDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VysetreniWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UzivatelDetailWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,6 +401,9 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

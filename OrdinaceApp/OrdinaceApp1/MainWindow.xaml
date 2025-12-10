@@ -1,42 +1,118 @@
 ﻿<Window x:Class="OrdinaceApp1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="IS Nemocnice" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+        Title="IS Nemocnice - Centrální Systém" Height="720" Width="1080" 
+        WindowStartupLocation="CenterScreen"
+        Background="#F4F7F9">
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0" FontSize="14" Padding="5">
-            <MenuItem Header="Aplikace">
+        <Menu Grid.Row="0" FontSize="14" Padding="10,8" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+            <MenuItem Header="📁 Aplikace">
                 <MenuItem Header="Odhlásit se" Click="MenuOdhlasit_Click"/>
                 <Separator/>
                 <MenuItem Header="Ukončit" Click="MenuUkoncit_Click"/>
             </MenuItem>
 
-            <MenuItem Header="Pacienti">
+            <MenuItem Header="🧑‍⚕️ Pacienti">
                 <MenuItem Header="Seznam pacientů" Click="MenuPacientiSeznam_Click"/>
-                <MenuItem Header="Přidat nového pacienta" Click="MenuPacientNovy_Click"/>
+                <MenuItem Header="Přidat nového pacienta" Click="MenuPacientNovy_Click" FontWeight="Bold"/>
+                <MenuItem Header="Upravit vybraného pacienta" Click="MenuPacientUpravit_Click"/>
                 <Separator/>
-                <MenuItem Header="Report alergiků (Explicitní kurzor)" Click="MenuReport_Click"/>
+                <MenuItem Header="Rezervace (Objednání)" Click="MenuRezervace_Click"/>
+                <MenuItem Header="Doporučení / Žádanky" Click="MenuDoporuceni_Click"/>
+                <MenuItem Header="Pracovní neschopnosti" Click="MenuNeschopnost_Click"/>
+                <MenuItem Header="Anamnéza (Historie nemocí)" Click="MenuAnamneza_Click"/>
+                <Separator/>
+                <!--// <MenuItem Header="Report alergiků (Explicitní kurzor)" Click="MenuReport_Click"/>-->
+                <MenuItem Header="Evidence alergií" Click="MenuAlergie_Click"/>
+                <Separator/>
+                <MenuItem Header="Kniha vyšetření" Click="MenuVysetreni_Click"/>
+                <MenuItem Header="Lékařské předpisy (Recepty)" Click="MenuPredpisy_Click"/>
+                <Separator/>
                 <MenuItem Header="Správa souborů / Dokumenty" Click="MenuSoubory_Click"/>
             </MenuItem>
 
-            <MenuItem Name="MenuAdmin" Header="Administrace">
+            <MenuItem Name="MenuAdmin" Header="⚙️ Administrace">
+                <MenuItem Header="Seznam rolí (Číselník)" Click="MenuRole_Click"/>
                 <MenuItem Header="Log historie (Audit)" Click="MenuLog_Click"/>
                 <MenuItem Header="Systémový katalog (DB Objekty)" Click="MenuSystem_Click"/>
-                <MenuItem Header="Správa uživatelů"/>
+                <MenuItem Header="Správa uživatelů" Click="MenuSpravaUzivatelu_Click"/>
+                <Separator/>
+                <MenuItem Header="Správa lékařů (CRUD)" Click="MenuSpravaLekaru_Click"/>
+                <Separator/>
+                <MenuItem Header="Správa léků (Katalog CRUD)" Click="MenuLeky_Click"/>
+                <Separator/>
+                <MenuItem Header="Číselník nemocí (Diagnózy)" Click="MenuNemoci_Click"/>
+                <Separator/>
+                <MenuItem Header="Ordinační hodiny" Click="MenuOrdinace_Click"/>
             </MenuItem>
         </Menu>
 
-        <DataGrid Name="MainDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="True" IsReadOnly="True" Background="WhiteSmoke"/>
+        <Border Grid.Row="1" Background="{StaticResource MedicalBlue}" Padding="25,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-        <StatusBar Grid.Row="2">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="🏥" FontSize="32" Margin="0,0,15,0" VerticalAlignment="Center">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="2" Opacity="0.3"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="NEMOCNIČNÍ INFORMAČNÍ SYSTÉM" FontSize="22" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock Text="Fakultní nemocnice Hradec Králové | Centrální evidence" FontSize="14" Foreground="#E6F2FF" Margin="0,2,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Image Grid.Column="1" 
+                       Source="/Images/logo.png" 
+                       Height="55" 
+                       RenderOptions.BitmapScalingMode="HighQuality"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="20,0,0,0"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" Margin="20" Background="White" CornerRadius="8" BorderBrush="#E0E0E0" BorderThickness="1">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="0.05" BlurRadius="10"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Aktuální přehled" FontSize="18" FontWeight="SemiBold" Margin="20,20,0,5" Foreground="{StaticResource TextDark}"/>
+
+                <DataGrid Name="MainDataGrid" Grid.Row="1" Margin="20,10,20,20" 
+                          AutoGenerateColumns="True" IsReadOnly="True" 
+                          BorderThickness="0"/>
+            </Grid>
+        </Border>
+
+        <StatusBar Grid.Row="3" Background="White" Padding="10,5" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0">
             <StatusBarItem>
-                <TextBlock Name="TxtStatus" Text="Připraven."/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="🟢" FontSize="10" Margin="0,2,8,0" VerticalAlignment="Center"/>
+                    <TextBlock Name="TxtStatus" Text="Systém připraven k práci." FontWeight="Medium" Foreground="{StaticResource TextDark}"/>
+                </StackPanel>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock Text="Verze 1.0 (Final) | © 2025 Semestrální práce" Foreground="Gray" FontSize="11"/>
             </StatusBarItem>
         </StatusBar>
     </Grid>

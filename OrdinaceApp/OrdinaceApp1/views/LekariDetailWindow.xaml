@@ -1,0 +1,30 @@
+﻿<Window x:Class="OrdinaceApp1.Views.LekarDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Detail lékaře" Height="500" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="KARTA LÉKAŘE" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Jméno:"/>
+            <TextBox Name="TxtJmeno" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Příjmení:"/>
+            <TextBox Name="TxtPrijmeni" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Specializace:"/>
+            <TextBox Name="TxtSpec" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Telefon:"/>
+            <TextBox Name="TxtTel" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Email:"/>
+            <TextBox Name="TxtEmail" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Přiřazený uživatelský účet (Login):" FontWeight="Bold" Margin="0,10,0,0"/>
+            <ComboBox Name="CmbUzivatel" DisplayMemberPath="PrihlasovaciJmeno" SelectedValuePath="IdUzivatel" Margin="0,0,0,10"/>
+
+            <Button Content="💾 Uložit" Height="40" Margin="0,10,0,0" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

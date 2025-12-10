@@ -1,0 +1,24 @@
+﻿<Window x:Class="OrdinaceApp1.Views.RezervaceDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nová rezervace" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="OBJEDNÁNÍ TERMÍNU" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Pacient:"/>
+            <ComboBox Name="CmbPacient" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdPacient" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Lékař:"/>
+            <ComboBox Name="CmbLekar" DisplayMemberPath="CeleJmeno" SelectedValuePath="IdLekar" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Datum:"/>
+            <DatePicker Name="DpDatum" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Čas (HH:MM):"/>
+            <TextBox Name="TxtCas" Text="08:00" Margin="0,0,0,20"/>
+
+            <Button Content="💾 Uložit rezervaci" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>

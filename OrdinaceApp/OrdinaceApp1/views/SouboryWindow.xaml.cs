@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using Microsoft.Win32;
 using OrdinaceApp1.DataAccess;
+using OrdinaceApp1.Models;
 
 namespace OrdinaceApp1.Views
 {
@@ -36,6 +37,78 @@ namespace OrdinaceApp1.Views
                 repo.NahratSoubor(nazev, "application/file", pripona, data, "Popis", _userId);
 
                 NacistData(); 
+            }
+        }
+        private void BtnStahnout_Click(object sender, RoutedEventArgs e)
+        {
+            if (DgSoubory.SelectedItem is Soubor vybranyZeSeznamu)
+            {
+                try
+                {
+                    var repo = new SouborRepository();
+                    var souborSDaty = repo.GetSouborData(vybranyZeSeznamu.IdSoubor);
+
+                    if (souborSDaty == null || souborSDaty.Data == null)
+                    {
+                        MessageBox.Show("Soubor neobsahuje žádná data nebo se nepodařilo načíst.");
+                        return;
+                    }
+
+                    SaveFileDialog saveDialog = new SaveFileDialog();
+                    saveDialog.FileName = souborSDaty.Nazev; 
+                    saveDialog.Filter = "Všechny soubory (*.*)|*.*";
+
+                    if (saveDialog.ShowDialog() == true)
+                    {
+                        File.WriteAllBytes(saveDialog.FileName, souborSDaty.Data);
+                        MessageBox.Show("Soubor byl úspěšně stažen.", "Hotovo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Chyba při stahování: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nejprve vyberte soubor ze seznamu.");
+            }
+        }
+        private void BtnUpravit_Click(object sender, RoutedEventArgs e)
+        {
+            if (DgSoubory.SelectedItem is Soubor vybrany)
+            {
+                var okno = new SouborEditWindow(vybrany);
+                okno.ShowDialog();
+                NacistData(); 
+            }
+            else
+            {
+                MessageBox.Show("Vyberte soubor k úpravě.");
+            }
+        }
+
+        private void BtnSmazat_Click(object sender, RoutedEventArgs e)
+        {
+            if (DgSoubory.SelectedItem is Soubor vybrany)
+            {
+                if (MessageBox.Show($"Opravdu smazat soubor '{vybrany.Nazev}'?", "Varování", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        var repo = new SouborRepository();
+                        repo.SmazatSoubor(vybrany.IdSoubor);
+                        NacistData();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Chyba při mazání: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte soubor ke smazání.");
             }
         }
 

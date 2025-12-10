@@ -1,0 +1,30 @@
+﻿<Window x:Class="OrdinaceApp1.Views.LekDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Detail léku" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="ÚDAJE O LÉKU" FontWeight="Bold" Margin="0,0,0,15" FontSize="16" HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Název léku:"/>
+            <TextBox Name="TxtNazev" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Účinná látka:"/>
+            <TextBox Name="TxtUcinnaLatka" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Cena (Kč):"/>
+            <TextBox Name="TxtCena" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Dávkování:"/>
+            <TextBox Name="TxtDavkovani" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10" Padding="5"/>
+
+            <TextBlock Text="Vedlejší účinky:"/>
+            <TextBox Name="TxtUcinky" Height="60" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="0,0,0,20" Padding="5"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="💾 Uložit" Width="100" Height="35" Click="BtnUlozit_Click" FontWeight="Bold"/>
+                <Button Content="Storno" Width="80" Height="35" Margin="10,0,0,0" Click="BtnStorno_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="OrdinaceApp1.Views.UzivatelDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Detail uživatele" Height="450" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="UŽIVATELSKÝ ÚČET" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Přihlašovací jméno (Login):"/>
+            <TextBox Name="TxtLogin" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Heslo:" Name="LblHeslo"/>
+            <TextBox Name="TxtHeslo" Margin="0,0,0,5"/>
+            <TextBlock Text="(Při úpravě nechte prázdné, pokud nechcete měnit)" FontSize="10" Foreground="Gray" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Jméno:"/>
+            <TextBox Name="TxtJmeno" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Příjmení:"/>
+            <TextBox Name="TxtPrijmeni" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Role:" FontWeight="Bold"/>
+            <ComboBox Name="CmbRole" Margin="0,0,0,10">
+                <ComboBoxItem Content="1 - Administrátor" Tag="1"/>
+                <ComboBoxItem Content="2 - Lékař" Tag="2"/>
+                <ComboBoxItem Content="3 - Pacient" Tag="3"/>
+            </ComboBox>
+
+            <CheckBox Name="ChkAktivni" Content="Účet je aktivní" IsChecked="True" Margin="0,10,0,20"/>
+
+            <Button Content="💾 Uložit" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
+        </StackPanel>
+    </Grid>
+</Window>
