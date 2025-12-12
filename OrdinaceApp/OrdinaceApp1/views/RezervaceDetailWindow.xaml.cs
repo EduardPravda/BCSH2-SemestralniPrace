@@ -10,24 +10,32 @@ namespace OrdinaceApp1.Views
         public RezervaceDetailWindow()
         {
             InitializeComponent();
-            DpDatum.SelectedDate = DateTime.Now.AddDays(1); 
-            NacistCiselniky();
+            DpDatum.SelectedDate = DateTime.Now.AddDays(1);
+
+            NacistSeznamy();
         }
 
-        private void NacistCiselniky()
+        private void NacistSeznamy()
         {
-            var repoP = new PacientRepository();
-            CmbPacient.ItemsSource = repoP.GetPacientiProCombo();
+            try
+            {
+                var pacRepo = new PacientRepository();
+                CmbPacient.ItemsSource = pacRepo.GetPacientiProCombo();
 
-            var repoL = new LekarRepository();
-            CmbLekar.ItemsSource = repoL.GetVsechnyLekare();
+                // 1. NAČTENÍ LÉKAŘŮ DO COMBOBOXU
+                // (Pokud nemáš LekarRepository, použij UzivatelRepository nebo jiný existující)
+                var lekRepo = new LekarRepository();
+                CmbLekar.ItemsSource = lekRepo.GetVsechnyLekare();
+            }
+            catch { }
         }
 
         private void BtnUlozit_Click(object sender, RoutedEventArgs e)
         {
+            // 2. KONTROLA, ZDA JE VYBRÁN I LÉKAŘ
             if (CmbPacient.SelectedValue == null || CmbLekar.SelectedValue == null || DpDatum.SelectedDate == null)
             {
-                MessageBox.Show("Vyplňte všechny údaje.");
+                MessageBox.Show("Vyberte pacienta, lékaře a datum.");
                 return;
             }
 
@@ -38,16 +46,11 @@ namespace OrdinaceApp1.Views
                 {
                     datum = datum.Add(cas);
                 }
-                else
-                {
-                    MessageBox.Show("Špatný formát času (použijte např. 14:30).");
-                    return;
-                }
 
                 var r = new Rezervace
                 {
                     IdPacient = (int)CmbPacient.SelectedValue,
-                    IdLekar = (int)CmbLekar.SelectedValue,
+                    IdLekar = (int)CmbLekar.SelectedValue, // 3. ULOŽENÍ ID LÉKAŘE
                     Datum = datum
                 };
 

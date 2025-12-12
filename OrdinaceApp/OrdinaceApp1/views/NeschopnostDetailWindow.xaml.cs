@@ -37,13 +37,13 @@ namespace OrdinaceApp1.Views
                 {
                     IdPacient = (int)CmbPacient.SelectedValue,
                     IdLekar = (int)CmbLekar.SelectedValue,
-                    Zacatek = DpZacatek.SelectedDate ?? DateTime.Now,
-                    Konec = DpKonec.SelectedDate,
+                    DatumOd = DpZacatek.SelectedDate ?? DateTime.Now,
+                    DatumDo = DpKonec.SelectedDate,
                     Duvod = TxtDuvod.Text
                 };
 
                 var repo = new NeschopnostRepository();
-                repo.VystavitNeschopnost(n);
+                repo.PridatNeschopnost(n);
 
                 MessageBox.Show("Neschopenka vystavena.");
                 this.Close();

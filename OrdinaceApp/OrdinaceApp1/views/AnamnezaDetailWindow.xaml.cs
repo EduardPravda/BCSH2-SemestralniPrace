@@ -23,7 +23,7 @@ namespace OrdinaceApp1.Views
 
         private void BtnUlozit_Click(object sender, RoutedEventArgs e)
         {
-            if (CmbPacient.SelectedValue == null || CmbTyp.SelectedItem == null)
+            if (CmbPacient.SelectedValue == null || cmbTyp.SelectedItem == null)
             {
                 MessageBox.Show("Vyberte pacienta a typ anamnézy.");
                 return;
@@ -31,7 +31,7 @@ namespace OrdinaceApp1.Views
 
             try
             {
-                var typItem = (ComboBoxItem)CmbTyp.SelectedItem;
+                var typItem = (ComboBoxItem)cmbTyp.SelectedItem;
 
                 var a = new Anamneza
                 {

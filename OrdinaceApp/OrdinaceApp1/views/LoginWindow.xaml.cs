@@ -10,6 +10,21 @@ namespace OrdinaceApp1.Views
         public LoginWindow()
         {
             InitializeComponent();
+            try
+            {
+                var db = new OrdinaceApp1.DataAccess.Database();
+                using (var conn = db.GetConnection())
+                {
+                    // Zkusíme přidat sloupec. Pokud už existuje, spadne to do catch (což nevadí)
+                    using (var cmd = new Oracle.ManagedDataAccess.Client.OracleCommand(
+                        "ALTER TABLE REZERVACE ADD LEKAR_ID_Lekar INTEGER", conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Databáze byla úspěšně aktualizována! Sloupec pro lékaře přidán.");
+            }
+            catch { /* Ignorujeme chybu, pokud sloupec už existuje */ }
         }
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
@@ -36,7 +51,7 @@ namespace OrdinaceApp1.Views
                 }
                 else
                 {
-                    TxtChyba.Text = "Chybné jméno nebo heslo.";
+                    TxtChyba.Text = "Příhlášení se nezdařilo. Chybné jméno nebo heslo.";
                 }
             }
             catch (Exception ex)

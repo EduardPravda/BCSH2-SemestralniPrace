@@ -16,11 +16,11 @@
 
         <DataGrid Name="DgNeschopnosti" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFF0F5">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Začátek" Binding="{Binding Zacatek, StringFormat={}{0:dd.MM.yyyy}}" Width="90"/>
-                <DataGridTextColumn Header="Konec" Binding="{Binding Konec, StringFormat={}{0:dd.MM.yyyy}}" Width="90"/>
-                <DataGridTextColumn Header="Pacient" Binding="{Binding PacientJmeno}" Width="140" FontWeight="Bold"/>
-                <DataGridTextColumn Header="Důvod" Binding="{Binding Duvod}" Width="*"/>
-                <DataGridTextColumn Header="Lékař" Binding="{Binding LekarJmeno}" Width="140"/>
+                <DataGridTextColumn Header="Začátek" Binding="{Binding DatumOd, StringFormat={}{0:dd.MM.yyyy}}" Width="100"/>
+                <DataGridTextColumn Header="Konec" Binding="{Binding DatumDo, StringFormat={}{0:dd.MM.yyyy}, TargetNullValue='---'}" Width="100"/>
+                <DataGridTextColumn Header="Pacient" Binding="{Binding PacientJmeno}" Width="*"/>
+                <DataGridTextColumn Header="Důvod" Binding="{Binding Duvod}" Width="2*"/>
+                <DataGridTextColumn Header="Lékař" Binding="{Binding LekarJmeno}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

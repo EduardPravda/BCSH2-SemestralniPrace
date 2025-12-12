@@ -53,8 +53,10 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                string sql = @"INSERT INTO ANAMNEZA (datumZaznamu, typ_anamnezy, poznamky, PACIENT_ID_Pacient)
-                               VALUES (:datum, :typ, :pozn, :idPac)";
+                // 1. Přidán sloupec LEKAR_ID_LEKAR (a případně i DOPORUCENI, pokud jste ho neupravil v DB)
+                string sql = @"INSERT INTO ANAMNEZA 
+                       (datumZaznamu, typ_anamnezy, poznamky, PACIENT_ID_Pacient, LEKAR_ID_LEKAR)
+                       VALUES (:datum, :typ, :pozn, :idPac, :idLekar)";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
@@ -62,6 +64,13 @@ namespace OrdinaceApp1.DataAccess
                     cmd.Parameters.Add("typ", a.Typ);
                     cmd.Parameters.Add("pozn", a.Poznamky);
                     cmd.Parameters.Add("idPac", a.IdPacient);
+
+                    // 2. Zde musíme poslat ID lékaře.
+                    // Pokud nemáte přihlašovací systém, pošlete tam natvrdo ID 1 (nebo jiné existující ID)
+                    cmd.Parameters.Add("idLekar", 1);
+
+                    // Poznámka: Pokud jste neupravil v DB sloupec DOPORUCENI na NULL, 
+                    // musíte sem přidat i to (viz předchozí krok).
 
                     cmd.ExecuteNonQuery();
                 }

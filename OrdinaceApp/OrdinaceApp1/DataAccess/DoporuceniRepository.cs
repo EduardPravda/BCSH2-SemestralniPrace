@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using OrdinaceApp1.Models;
 
@@ -15,13 +14,16 @@ namespace OrdinaceApp1.DataAccess
             _database = new Database();
         }
 
+        // 1. SEZNAM DOPORUČENÍ
         public List<Doporuceni> GetVsechnaDoporuceni()
         {
             var list = new List<Doporuceni>();
             using (var conn = _database.GetConnection())
             {
+                // ZDE JSOU OPRAVENÉ NÁZVY SLOUPCŮ PODLE TVÉ TABULKY:
+                // datumVydani, duvodDoporuceni
                 string sql = @"
-                    SELECT d.ID_Doporuceni, d.datumVydani, d.duvodDoporuceni, d.odbornostKam, -- Pokud nemáš sloupec odbornostKam, můžeš ho vynechat
+                    SELECT d.ID_doporuceni, d.duvodDoporuceni, d.datumVydani,
                            d.PACIENT_ID_Pacient, d.LEKAR_ID_Lekar,
                            p.prijmeni || ' ' || p.jmeno AS pacient_cele,
                            l.prijmeni || ' ' || l.jmeno AS lekar_cele
@@ -30,27 +32,25 @@ namespace OrdinaceApp1.DataAccess
                     JOIN LEKAR l ON d.LEKAR_ID_Lekar = l.ID_Lekar
                     ORDER BY d.datumVydani DESC";
 
-
                 using (var cmd = new OracleCommand(sql, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            var dop = new Doporuceni
+                            list.Add(new Doporuceni
                             {
-                                IdDoporuceni = Convert.ToInt32(reader["ID_Doporuceni"]),
-                                Datum = Convert.ToDateTime(reader["datumVydani"]),
+                                IdDoporuceni = Convert.ToInt32(reader["ID_doporuceni"]),
+
+                                // Tady mapujeme názvy z DB do modelu C#
                                 Duvod = reader["duvodDoporuceni"].ToString(),
+                                Datum = Convert.ToDateTime(reader["datumVydani"]),
+
                                 IdPacient = Convert.ToInt32(reader["PACIENT_ID_Pacient"]),
-                                IdLekar = Convert.ToInt32(reader["LEKAR_ID_Lekar"]),
                                 PacientJmeno = reader["pacient_cele"].ToString(),
+                                IdLekar = Convert.ToInt32(reader["LEKAR_ID_Lekar"]),
                                 LekarJmeno = reader["lekar_cele"].ToString()
-                            };
-
-                            try { dop.OdbornostKam = reader["odbornostKam"].ToString(); } catch { }
-
-                            list.Add(dop);
+                            });
                         }
                     }
                 }
@@ -58,17 +58,19 @@ namespace OrdinaceApp1.DataAccess
             return list;
         }
 
-        public void VystavitDoporuceni(Doporuceni d)
+        // 2. PŘIDAT DOPORUČENÍ
+        public void PridatDoporuceni(Doporuceni d)
         {
             using (var conn = _database.GetConnection())
             {
-                string sql = @"INSERT INTO DOPORUCENI (datumVydani, duvodDoporuceni, PACIENT_ID_Pacient, LEKAR_ID_Lekar)
-                               VALUES (:datum, :duvod, :idPac, :idLek)";
+                // OPRAVENO: Používáme přesné názvy: duvodDoporuceni, datumVydani
+                string sql = @"INSERT INTO DOPORUCENI (duvodDoporuceni, datumVydani, PACIENT_ID_Pacient, LEKAR_ID_Lekar)
+                               VALUES (:duvod, :datum, :idPac, :idLek)";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
-                    cmd.Parameters.Add("datum", d.Datum);
                     cmd.Parameters.Add("duvod", d.Duvod);
+                    cmd.Parameters.Add("datum", d.Datum);
                     cmd.Parameters.Add("idPac", d.IdPacient);
                     cmd.Parameters.Add("idLek", d.IdLekar);
 
@@ -77,11 +79,13 @@ namespace OrdinaceApp1.DataAccess
             }
         }
 
+        // 3. SMAZAT
         public void SmazatDoporuceni(int id)
         {
             using (var conn = _database.GetConnection())
             {
-                string sql = "DELETE FROM DOPORUCENI WHERE ID_Doporuceni = :id";
+                // Tady taky pozor na ID_doporuceni
+                string sql = "DELETE FROM DOPORUCENI WHERE ID_doporuceni = :id";
                 using (var cmd = new OracleCommand(sql, conn))
                 {
                     cmd.Parameters.Add("id", id);

@@ -37,12 +37,12 @@ namespace OrdinaceApp1.Views
                 {
                     IdPacient = (int)CmbPacient.SelectedValue,
                     IdLekar = (int)CmbLekar.SelectedValue,
-                    Datum = DpDatum.SelectedDate ?? DateTime.Now,
-                    Duvod = TxtDuvod.Text
+                    Duvod = TxtDuvod.Text,
+                    Datum = DpDatum.SelectedDate ?? DateTime.Now
                 };
 
                 var repo = new DoporuceniRepository();
-                repo.VystavitDoporuceni(d);
+                repo.PridatDoporuceni(d);
 
                 MessageBox.Show("Doporučení vystaveno.");
                 this.Close();

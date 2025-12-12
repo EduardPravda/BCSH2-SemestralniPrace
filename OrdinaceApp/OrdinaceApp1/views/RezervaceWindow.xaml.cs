@@ -22,7 +22,8 @@ namespace OrdinaceApp1.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Chyba: " + ex.Message);
+                // Zde je to ošetření, aby to nespadlo, když chybí sloupec v DB
+                MessageBox.Show("Nepodařilo se načíst rezervace (chyba DB).\n" + ex.Message);
             }
         }
 
@@ -30,7 +31,7 @@ namespace OrdinaceApp1.Views
         {
             var okno = new RezervaceDetailWindow();
             okno.ShowDialog();
-            NacistData();
+            NacistData(); // Po zavření okna aktualizujeme seznam
         }
 
         private void BtnSmazat_Click(object sender, RoutedEventArgs e)

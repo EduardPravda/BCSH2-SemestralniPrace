@@ -20,17 +20,21 @@ namespace OrdinaceApp1.DataAccess
             var list = new List<Predpis>();
             using (var conn = _database.GetConnection())
             {
+                // SELECT zůstává stejný, taháme POPISLEKU
                 string sql = @"
-                    SELECT p.ID_Predpis, p.datumVydani, p.davkovani, p.delkaLecby, p.popisLeku,
-                           p.PACIENT_ID_Pacient, p.LEK_ID_Lek, p.LEKAR_ID_Lekar,
-                           pac.prijmeni || ' ' || pac.jmeno AS pacient_cele,
-                           l.nazevLeku,
-                           doc.prijmeni || ' ' || doc.jmeno AS lekar_cele
-                    FROM LEKARSKY_PREDPIS p
-                    JOIN PACIENT pac ON p.PACIENT_ID_Pacient = pac.ID_Pacient
-                    JOIN LEK l ON p.LEK_ID_Lek = l.ID_Lek
-                    JOIN LEKAR doc ON p.LEKAR_ID_Lekar = doc.ID_Lekar
-                    ORDER BY p.datumVydani DESC";
+                    SELECT 
+                        lp.ID_PREDPIS,
+                        lp.DATUMVYDANI,   
+                        lp.POPISLEKU,     
+                        lp.DAVKOVANI,
+                        lp.DELKALECBY,
+                        p.Prijmeni || ' ' || p.Jmeno AS PacientJmeno,
+                        l.Prijmeni || ' ' || l.Jmeno AS LekarJmeno
+                    FROM LEKARSKY_PREDPIS lp
+                    JOIN VYSETRENI v ON lp.VYSETRENI_ID_VYSETRENI = v.ID_VYSETRENI
+                    JOIN PACIENT p ON v.PACIENT_ID_Pacient = p.ID_Pacient
+                    JOIN LEKAR l ON lp.LEKAR_ID_LEKAR = l.ID_Lekar
+                    ORDER BY lp.DATUMVYDANI DESC";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
@@ -40,18 +44,19 @@ namespace OrdinaceApp1.DataAccess
                         {
                             list.Add(new Predpis
                             {
-                                IdPredpis = Convert.ToInt32(reader["ID_Predpis"]),
-                                DatumVydani = Convert.ToDateTime(reader["datumVydani"]),
-                                Davkovani = reader["davkovani"].ToString(),
-                                DelkaLecby = reader["delkaLecby"].ToString(),
-                                Poznamka = reader["popisLeku"].ToString(),
-                                IdPacient = Convert.ToInt32(reader["PACIENT_ID_Pacient"]),
-                                IdLek = Convert.ToInt32(reader["LEK_ID_Lek"]),
-                                IdLekar = Convert.ToInt32(reader["LEKAR_ID_Lekar"]),
+                                IdPredpis = Convert.ToInt32(reader["ID_PREDPIS"]),
+                                DatumVydani = Convert.ToDateTime(reader["DATUMVYDANI"]),
 
-                                PacientJmeno = reader["pacient_cele"].ToString(),
-                                LekNazev = reader["nazevLeku"].ToString(),
-                                LekarJmeno = reader["lekar_cele"].ToString()
+                                // --- OPRAVA ZDE ---
+                                // Text z databáze (POPISLEKU) dáváme do LekNazev (string)
+                                LekNazev = reader["POPISLEKU"].ToString(),
+                                // IdLek necháme být (nebo 0), protože ho z tohoto selectu nemáme
+                                // ------------------
+
+                                Davkovani = reader["DAVKOVANI"].ToString(),
+                                DelkaLecby = reader["DELKALECBY"] != DBNull.Value ? reader["DELKALECBY"].ToString() : "",
+                                PacientJmeno = reader["PacientJmeno"].ToString(),
+                                LekarJmeno = reader["LekarJmeno"].ToString()
                             });
                         }
                     }
@@ -60,23 +65,46 @@ namespace OrdinaceApp1.DataAccess
             return list;
         }
 
-        public void PridatPredpis(Predpis p)
+        public void PridatPredpis(Predpis p, int idPacient, int idLekar)
         {
             using (var conn = _database.GetConnection())
             {
+                // 1. Získání ID posledního vyšetření
+                int idVysetreni = 0;
+
+                // --- ZDE BYLA CHYBA (bylo tam ORDER BY datum) ---
+                // Opraveno na: ORDER BY DATUMVYSETRENI
+                string sqlGetVysetreni = "SELECT ID_VYSETRENI FROM VYSETRENI WHERE PACIENT_ID_PACIENT = :idPac ORDER BY DATUMVYSETRENI DESC FETCH FIRST 1 ROWS ONLY";
+                // ------------------------------------------------
+
+                using (var cmdCheck = new OracleCommand(sqlGetVysetreni, conn))
+                {
+                    cmdCheck.Parameters.Add("idPac", idPacient);
+                    var result = cmdCheck.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        idVysetreni = Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        throw new Exception("Chyba: Pacient nemá žádné vyšetření! Recept musí být vázán na vyšetření.");
+                    }
+                }
+
+                // 2. Vložení receptu (toto už by mělo být správně z předchozího kroku)
                 string sql = @"INSERT INTO LEKARSKY_PREDPIS 
-                               (datumVydani, davkovani, delkaLecby, popisLeku, PACIENT_ID_Pacient, LEK_ID_Lek, LEKAR_ID_Lekar)
-                               VALUES (:datum, :davka, :delka, :popis, :idPac, :idLek, :idDoc)";
+                       (DATUMVYDANI, POPISLEKU, DAVKOVANI, DELKALECBY, LEKAR_ID_LEKAR, VYSETRENI_ID_VYSETRENI) 
+                       VALUES (:datum, :popis, :davka, :delka, :idLekar, :idVysetreni)";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
                     cmd.Parameters.Add("datum", p.DatumVydani);
+                    cmd.Parameters.Add("popis", p.LekNazev);
                     cmd.Parameters.Add("davka", p.Davkovani);
                     cmd.Parameters.Add("delka", p.DelkaLecby);
-                    cmd.Parameters.Add("popis", p.Poznamka);
-                    cmd.Parameters.Add("idPac", p.IdPacient);
-                    cmd.Parameters.Add("idLek", p.IdLek);
-                    cmd.Parameters.Add("idDoc", p.IdLekar);
+                    cmd.Parameters.Add("idLekar", idLekar);
+                    cmd.Parameters.Add("idVysetreni", idVysetreni);
 
                     cmd.ExecuteNonQuery();
                 }

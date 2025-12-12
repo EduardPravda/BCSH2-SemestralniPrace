@@ -51,11 +51,18 @@ namespace OrdinaceApp1.Views
 
             try
             {
+                // 1. Získání celého objektu léku, abychom měli jeho název (nejen ID)
+                // Předpokládám, že ve třídě 'Lek' máte vlastnost 'Nazev' nebo 'NazevLeku'
+                var vybranyLekObjekt = (Lek)CmbLek.SelectedItem;
+
                 var p = new Predpis
                 {
+                    // ID si uložíme pro jistotu, ale Repository potřebuje hlavně ty parametry vedle
                     IdPacient = (int)CmbPacient.SelectedValue,
-                    IdLek = (int)CmbLek.SelectedValue,
                     IdLekar = (int)CmbLekar.SelectedValue,
+
+                    // DŮLEŽITÁ OPRAVA: Do modelu musíme poslat textový název léku
+                    LekNazev = vybranyLekObjekt.Nazev, // Zkontrolujte, zda se vlastnost ve třídě Lek jmenuje "Nazev"
 
                     DatumVydani = DpDatum.SelectedDate ?? DateTime.Now,
                     Davkovani = TxtDavkovani.Text,
@@ -64,7 +71,10 @@ namespace OrdinaceApp1.Views
                 };
 
                 var repo = new PredpisRepository();
-                repo.PridatPredpis(p);
+
+                // 2. DŮLEŽITÁ OPRAVA: Volání metody se 3 parametry (Objekt, IdPacient, IdLekar)
+                // Takto jsme to definovali v PredpisRepository.cs
+                repo.PridatPredpis(p, p.IdPacient, p.IdLekar);
 
                 MessageBox.Show("Recept byl úspěšně vydán.");
                 this.Close();
