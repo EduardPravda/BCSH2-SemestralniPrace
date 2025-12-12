@@ -101,5 +101,18 @@ namespace OrdinaceApp1.DataAccess
                 }
             }
         }
+
+        public void HromadnePreceneni(int procenta)
+        {
+            using (var conn = _database.GetConnection())
+            {
+                using (var cmd = new OracleCommand("SP_Hromadne_Preceneni", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("p_procenta", OracleDbType.Int32).Value = procenta;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

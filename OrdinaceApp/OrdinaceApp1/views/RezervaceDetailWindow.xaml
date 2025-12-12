@@ -16,7 +16,7 @@
             <DatePicker Name="DpDatum" Margin="0,0,0,10"/>
 
             <TextBlock Text="Čas (HH:MM):"/>
-            <TextBox Name="TxtCas" Text="08:00" Margin="0,0,0,20"/>
+            <ComboBox Name="CmbCas" Text="08:00" Margin="0,0,0,20"/>
 
             <Button Content="💾 Uložit rezervaci" Height="40" Click="BtnUlozit_Click" FontWeight="Bold"/>
         </StackPanel>

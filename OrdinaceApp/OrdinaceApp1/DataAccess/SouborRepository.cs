@@ -51,6 +51,8 @@ namespace OrdinaceApp1.DataAccess
                 string sql = "INSERT INTO SOUBOR (nazev_souboru, typ_souboru, pripona, binarni_data, datum_nahrani, popis, UZIVATEL_id_uzivatel) VALUES (:nazev, :typ, :pripona, :blob, SYSDATE, :popis, :userid)";
                 using (var cmd = new OracleCommand(sql, conn))
                 {
+                    cmd.BindByName = true;
+
                     cmd.Parameters.Add("nazev", nazev);
                     cmd.Parameters.Add("typ", typ);
                     cmd.Parameters.Add("pripona", pripona);
@@ -65,7 +67,7 @@ namespace OrdinaceApp1.DataAccess
                 }
             }
         }
- 
+
         public void SmazatSoubor(int idSoubor)
         {
             using (var conn = _database.GetConnection())
@@ -129,5 +131,40 @@ namespace OrdinaceApp1.DataAccess
                 }
             }
         }
+
+        public List<Soubor> GetSouboryUzivatele(int userId)
+        {
+            var list = new List<Soubor>();
+            using (var conn = _database.GetConnection())
+            {
+                string sql = "SELECT id_soubor, nazev_souboru, typ_souboru, pripona, datum_nahrani, popis, UZIVATEL_id_uzivatel FROM SOUBOR WHERE UZIVATEL_id_uzivatel = :userid ORDER BY datum_nahrani DESC";
+
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.BindByName = true;
+
+                    cmd.Parameters.Add("userid", OracleDbType.Int32).Value = userId;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new Soubor
+                            {
+                                IdSoubor = Convert.ToInt32(reader["id_soubor"]),
+                                Nazev = reader["nazev_souboru"].ToString(),
+                                Typ = reader["typ_souboru"].ToString(),
+                                Pripona = reader["pripona"].ToString(),
+                                DatumNahrani = Convert.ToDateTime(reader["datum_nahrani"]),
+                                Popis = reader["popis"] == DBNull.Value ? "" : reader["popis"].ToString(),
+                                IdUzivatel = Convert.ToInt32(reader["UZIVATEL_id_uzivatel"])
+                            });
+                        }
+                    }
+                }
+            }
+            return list;
+        }
+
     }
 }

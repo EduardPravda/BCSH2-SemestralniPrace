@@ -18,8 +18,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Lékař" Binding="{Binding LekarJmeno}" Width="150" FontWeight="Bold"/>
                 <DataGridTextColumn Header="Den v týdnu" Binding="{Binding Den}" Width="100"/>
-                <DataGridTextColumn Header="Od" Binding="{Binding Zacatek}" Width="80"/>
-                <DataGridTextColumn Header="Do" Binding="{Binding Konec}" Width="80"/>
+                <DataGridTextColumn Header="Od" Binding="{Binding ZacatekCas}" Width="80"/>
+                <DataGridTextColumn Header="Do" Binding="{Binding KonecCas}" Width="80"/>
             </DataGrid.Columns>
         </DataGrid>
 

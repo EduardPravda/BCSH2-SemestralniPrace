@@ -44,6 +44,42 @@ namespace OrdinaceApp1.Views
             else MessageBox.Show("Vyberte uživatele.");
         }
 
+        private void BtnEmulovat_Click(object sender, RoutedEventArgs e)
+        {
+            if (DgUzivatele.SelectedItem is Uzivatel vybrany)
+            {
+                var result = MessageBox.Show($"Chcete se přihlásit do systému jako uživatel '{vybrany.PrihlasovaciJmeno}'?",
+                                             "Emulace uživatele", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    // 1. Vytvoříme nové hlavní okno s identitou vybraného uživatele
+                    var newMainWindow = new OrdinaceApp1.MainWindow(vybrany);
+                    newMainWindow.Show();
+
+                    // 2. Zavřeme aktuální okno správy
+                    this.Close();
+
+                    // 3. Zavřeme původní hlavní okno (musíme ho najít v aplikaci)
+                    foreach (Window w in Application.Current.Windows)
+                    {
+                        // Zavřeme všechna okna kromě toho nového, co jsme právě otevřeli
+                        if (w != newMainWindow)
+                        {
+                            w.Close();
+                        }
+                    }
+
+                    // Nastavíme nové okno jako hlavní
+                    Application.Current.MainWindow = newMainWindow;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte uživatele ze seznamu.");
+            }
+        }
+
         private void BtnSmazat_Click(object sender, RoutedEventArgs e)
         {
             if (DgUzivatele.SelectedItem is Uzivatel u)

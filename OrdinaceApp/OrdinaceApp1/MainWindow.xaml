@@ -21,20 +21,20 @@
             </MenuItem>
 
             <MenuItem Header="🧑‍⚕️ Pacienti">
-                <MenuItem Header="Seznam pacientů" Click="MenuPacientiSeznam_Click"/>
-                <MenuItem Header="Přidat nového pacienta" Click="MenuPacientNovy_Click" FontWeight="Bold"/>
-                <MenuItem Header="Upravit vybraného pacienta" Click="MenuPacientUpravit_Click"/>
+                <MenuItem Header="Seznam pacientů" x:Name="MenuPacientiSeznam" Click="MenuPacientiSeznam_Click"/>
+
+                <MenuItem Header="Přidat nového pacienta" x:Name="MenuPacientNovy" Click="MenuPacientNovy_Click" FontWeight="Bold"/>
+                <MenuItem Header="Upravit vybraného pacienta" x:Name="MenuPacientUpravit" Click="MenuPacientUpravit_Click"/>
                 <Separator/>
                 <MenuItem Header="Rezervace (Objednání)" Click="MenuRezervace_Click"/>
-                <MenuItem Header="Doporučení / Žádanky" Click="MenuDoporuceni_Click"/>
-                <MenuItem Header="Pracovní neschopnosti" Click="MenuNeschopnost_Click"/>
-                <MenuItem Header="Anamnéza (Historie nemocí)" Click="MenuAnamneza_Click"/>
+                <MenuItem Header="Doporučení / Žádanky" x:Name="MenuDoporuceni" Click="MenuDoporuceni_Click"/>
+                <MenuItem Header="Pracovní neschopnosti" x:Name="MenuNeschopnost" Click="MenuNeschopnost_Click"/>
+                <MenuItem Header="Anamnéza (Historie nemocí)" x:Name="MenuAnamneza" Click="MenuAnamneza_Click"/>
                 <Separator/>
-                <!--// <MenuItem Header="Report alergiků (Explicitní kurzor)" Click="MenuReport_Click"/>-->
-                <MenuItem Header="Evidence alergií" Click="MenuAlergie_Click"/>
+                <MenuItem Header="Evidence alergií" x:Name="MenuAlergie" Click="MenuAlergie_Click"/>
                 <Separator/>
-                <MenuItem Header="Kniha vyšetření" Click="MenuVysetreni_Click"/>
-                <MenuItem Header="Lékařské předpisy (Recepty)" Click="MenuPredpisy_Click"/>
+                <MenuItem Header="Kniha vyšetření" x:Name="MenuVysetreni" Click="MenuVysetreni_Click"/>
+                <MenuItem Header="Lékařské předpisy (Recepty)" x:Name="MenuPredpisy" Click="MenuPredpisy_Click"/>
                 <Separator/>
                 <MenuItem Header="Správa souborů / Dokumenty" Click="MenuSoubory_Click"/>
             </MenuItem>
@@ -70,8 +70,8 @@
                     </TextBlock>
 
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="NEMOCNIČNÍ INFORMAČNÍ SYSTÉM" FontSize="22" FontWeight="Bold" Foreground="White"/>
-                        <TextBlock Text="Fakultní nemocnice Hradec Králové | Centrální evidence" FontSize="14" Foreground="#E6F2FF" Margin="0,2,0,0"/>
+                        <TextBlock Text="ORDINAČNÍ INFORMAČNÍ SYSTÉM" FontSize="22" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock Text="Ordinace praktického lékaře | TrueeCare" FontSize="14" Foreground="#E6F2FF" Margin="0,2,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -99,8 +99,18 @@
                 <TextBlock Grid.Row="0" Text="Aktuální přehled" FontSize="18" FontWeight="SemiBold" Margin="20,20,0,5" Foreground="{StaticResource TextDark}"/>
 
                 <DataGrid Name="MainDataGrid" Grid.Row="1" Margin="20,10,20,20" 
-                          AutoGenerateColumns="True" IsReadOnly="True" 
-                          BorderThickness="0"/>
+                          AutoGenerateColumns="False" IsReadOnly="True" 
+                          BorderThickness="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Příjmení" Binding="{Binding Prijmeni}" Width="120" FontWeight="Bold"/>
+                        <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" Width="120"/>
+                        <DataGridTextColumn Header="Věk (SQL Funkce)" Binding="{Binding Vek}" Width="100"/>
+                        <DataGridTextColumn Header="Stav (SQL Funkce)" Binding="{Binding StavNeschopenky}" Width="150" Foreground="Red"/>
+                        <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" Width="120"/>
+                        <DataGridTextColumn Header="Město" Binding="{Binding Mesto}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                
             </Grid>
         </Border>
 

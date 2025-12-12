@@ -9,19 +9,28 @@ namespace OrdinaceApp1.Views
 {
     public partial class SouboryWindow : Window
     {
-        private int _userId;
+        private Uzivatel _prihlasenyUzivatel;
 
-        public SouboryWindow(int userId)
+        public SouboryWindow(Uzivatel u)
         {
             InitializeComponent();
-            _userId = userId;
+            _prihlasenyUzivatel = u;
             NacistData();
         }
 
         private void NacistData()
         {
             var repo = new SouborRepository();
-            DgSoubory.ItemsSource = repo.GetSeznamSouboru();
+
+            // Pokud je Admin (1), vidí vše. Ostatní vidí jen své soubory.
+            if (_prihlasenyUzivatel.RoleId == 1)
+            {
+                DgSoubory.ItemsSource = repo.GetSeznamSouboru();
+            }
+            else
+            {
+                DgSoubory.ItemsSource = repo.GetSouboryUzivatele(_prihlasenyUzivatel.IdUzivatel);
+            }
         }
 
         private void BtnUpload_Click(object sender, RoutedEventArgs e)
@@ -34,7 +43,7 @@ namespace OrdinaceApp1.Views
                 string pripona = System.IO.Path.GetExtension(dlg.FileName);
 
                 var repo = new SouborRepository();
-                repo.NahratSoubor(nazev, "application/file", pripona, data, "Popis", _userId);
+                repo.NahratSoubor(nazev, "application/file", pripona, data, "Popis", _prihlasenyUzivatel.IdUzivatel);
 
                 NacistData(); 
             }

@@ -59,5 +59,14 @@ namespace OrdinaceApp1.Views
                 TxtChyba.Text = "Chyba databáze: " + ex.Message;
             }
         }
+
+        private void BtnRegistrace_Click(object sender, RoutedEventArgs e)
+        {
+            // Otevřeme okno v režimu registrace (true)
+            var regWindow = new UzivatelDetailWindow(true);
+            regWindow.ShowDialog();
+            // Po zavření může uživatel zadat své nové údaje do loginu
+        }
+
     }
 }

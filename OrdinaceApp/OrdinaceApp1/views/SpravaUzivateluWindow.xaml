@@ -19,13 +19,14 @@
                 <DataGridTextColumn Header="Login" Binding="{Binding PrihlasovaciJmeno}" Width="100" FontWeight="Bold"/>
                 <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" Width="100"/>
                 <DataGridTextColumn Header="Příjmení" Binding="{Binding Prijmeni}" Width="120"/>
-                <DataGridTextColumn Header="Role ID" Binding="{Binding RoleId}" Width="60"/>
+                <DataGridTextColumn Header="Role ID" Binding="{Binding RoleId}" Width="60" Visibility="Collapsed"/>
                 <DataGridTextColumn Header="Aktivní" Binding="{Binding Aktivni}" Width="60"/>
             </DataGrid.Columns>
         </DataGrid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
             <Button Content="✏️ Upravit / Změnit heslo" Width="200" Height="30" Margin="0,0,10,0" Click="BtnUpravit_Click"/>
+            <Button Content="🎭 Emulovat (Přihlásit jako)" Width="200" Height="30" Margin="0,0,10,0" Click="BtnEmulovat_Click" Background="Orange"/>
             <Button Content="🗑️ Smazat účet" Width="120" Height="30" Click="BtnSmazat_Click"/>
             <Button Content="Zavřít" Width="80" Height="30" Margin="20,0,0,0" Click="BtnClose_Click"/>
         </StackPanel>

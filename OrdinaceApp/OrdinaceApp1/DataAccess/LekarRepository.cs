@@ -80,7 +80,27 @@ namespace OrdinaceApp1.DataAccess
             }
             return list;
         }
-        
+
+        public int? GetLekarIdByUzivatel(int idUzivatel)
+        {
+            using (var conn = _database.GetConnection())
+            {
+                string sql = "SELECT ID_Lekar FROM LEKAR WHERE UZIVATEL_id_uzivatel = :uid AND ROWNUM = 1";
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.BindByName = true;
+                    cmd.Parameters.Add("uid", idUzivatel);
+                    var result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+            return null;
+        }
+
         public void PridatLekare(Lekar l)
         {
             using (var conn = _database.GetConnection())

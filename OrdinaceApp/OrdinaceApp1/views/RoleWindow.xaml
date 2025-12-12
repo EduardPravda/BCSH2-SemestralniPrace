@@ -13,7 +13,7 @@
 
         <DataGrid Name="DgRole" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Background="#F0F0F0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding IdRole}" Width="50" FontWeight="Bold"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdRole}" Width="50" Visibility="Collapsed"/>
                 <DataGridTextColumn Header="Název role" Binding="{Binding Nazev}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>

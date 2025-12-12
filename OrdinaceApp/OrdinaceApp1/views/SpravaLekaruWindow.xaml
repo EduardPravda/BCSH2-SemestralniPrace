@@ -21,7 +21,7 @@
                 <DataGridTextColumn Header="Specializace" Binding="{Binding Specializace}" Width="120"/>
                 <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" Width="100"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
-                <DataGridTextColumn Header="ID Uživ." Binding="{Binding IdUzivatel}" Width="60"/>
+                <DataGridTextColumn Header="ID Uživ." Binding="{Binding IdUzivatel}" Width="60" Visibility="Collapsed"/>
             </DataGrid.Columns>
         </DataGrid>
 

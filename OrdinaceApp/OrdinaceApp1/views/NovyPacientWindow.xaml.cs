@@ -41,13 +41,17 @@ namespace OrdinaceApp1.Views
             try
             {
                 var repo = new PacientRepository();
-                var p = repo.GetPacientDetail(id); 
+                var p = repo.GetPacientDetail(id);
 
                 if (p != null)
                 {
                     TxtJmeno.Text = p.Jmeno;
                     TxtPrijmeni.Text = p.Prijmeni;
                     TxtMesto.Text = p.Mesto;
+                    TxtUlice.Text = p.Ulice;
+                    TxtPsc.Text = p.Psc;
+                    DpDatumNarozeni.SelectedDate = p.DatumNarozeni;
+                    CmbUzivatele.SelectedValue = p.IdUzivatel;
                 }
             }
             catch (Exception ex)

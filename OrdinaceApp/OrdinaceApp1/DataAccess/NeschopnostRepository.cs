@@ -25,7 +25,7 @@ namespace OrdinaceApp1.DataAccess
                            n.PACIENT_ID_Pacient, n.LEKAR_ID_Lekar,
                            p.prijmeni || ' ' || p.jmeno AS pacient_cele,
                            l.prijmeni || ' ' || l.jmeno AS lekar_cele
-                    FROM NESCHOPNOST n
+                    FROM PRACOVNI_NESCHOPNOST n
                     JOIN PACIENT p ON n.PACIENT_ID_Pacient = p.ID_Pacient
                     JOIN LEKAR l ON n.LEKAR_ID_Lekar = l.ID_Lekar
                     ORDER BY n.datumOd DESC";
@@ -66,8 +66,8 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                string sql = @"INSERT INTO NESCHOPNOST (datumOd, datumDo, duvod, PACIENT_ID_Pacient, LEKAR_ID_Lekar)
-                               VALUES (:od, :do, :duv, :idPac, :idLek)";
+                string sql = @"INSERT INTO PRACOVNI_NESCHOPNOST (datumOd, datumDo, duvod, PACIENT_ID_Pacient, LEKAR_ID_Lekar, VYSETRENI_ID_Vysetreni)
+                                VALUES (:od, :do, :duv, :idPac, :idLek, 1)";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
@@ -92,7 +92,7 @@ namespace OrdinaceApp1.DataAccess
             using (var conn = _database.GetConnection())
             {
                 // SQL příkaz pro smazání podle ID
-                string sql = "DELETE FROM NESCHOPNOST WHERE ID_Neschopnost = :id";
+                string sql = "DELETE FROM PRACOVNI_NESCHOPNOST WHERE ID_Neschopnost = :id";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {

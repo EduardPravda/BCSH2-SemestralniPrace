@@ -20,20 +20,30 @@ namespace OrdinaceApp1.DataAccess
             var pacienti = new List<Pacient>();
             using (var conn = _database.GetConnection())
             {
-                string sql = "SELECT jmeno, prijmeni, telefon_mask, mesto FROM V_PACIENT_PUBLIC";
+                string sql = "SELECT * FROM V_PACIENT_PUBLIC ORDER BY prijmeni";
+
                 using (var cmd = new OracleCommand(sql, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            pacienti.Add(new Pacient
+                            var p = new Pacient
                             {
+                                IdPacient = Convert.ToInt32(reader["ID_Pacient"]),
                                 Jmeno = reader["jmeno"].ToString(),
                                 Prijmeni = reader["prijmeni"].ToString(),
                                 Telefon = reader["telefon_mask"].ToString(),
-                                Mesto = reader["mesto"].ToString()
-                            });
+                                Mesto = reader["mesto"].ToString(),
+
+                                Vek = reader["vek"] != DBNull.Value ? Convert.ToInt32(reader["vek"]) : 0
+                            };
+
+                            // Převod 1/0 na text
+                            int neschop = reader["ma_neschopenku"] != DBNull.Value ? Convert.ToInt32(reader["ma_neschopenku"]) : 0;
+                            p.StavNeschopenky = (neschop == 1) ? "V pracovní neschopnosti" : "Zdravý";
+
+                            pacienti.Add(p);
                         }
                     }
                 }
@@ -92,7 +102,13 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                string sql = "SELECT * FROM PACIENT WHERE ID_Pacient = :id";
+                string sql = @"
+                    SELECT p.ID_Pacient, p.jmeno, p.prijmeni, p.telefon, p.email, p.datumNarozeni,
+                           p.ADRESA_ID__Adresa, p.UZIVATEL_id_uzivatel,
+                           a.ulice, a.mesto, a.psc
+                    FROM PACIENT p
+                    JOIN ADRESA a ON p.ADRESA_ID__Adresa = a.ID__Adresa
+                    WHERE p.ID_Pacient = :id";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
@@ -107,17 +123,65 @@ namespace OrdinaceApp1.DataAccess
                                 IdPacient = Convert.ToInt32(reader["ID_Pacient"]),
                                 Jmeno = reader["jmeno"].ToString(),
                                 Prijmeni = reader["prijmeni"].ToString(),
+                                Telefon = reader["telefon"] != DBNull.Value ? reader["telefon"].ToString() : "",
                                 Mesto = reader["mesto"].ToString(),
-                                Telefon = reader["telefon"].ToString(),
-                                // Ulice = reader["ulice"].ToString(),
-                                // PSC = reader["psc"].ToString(),
-                                // IdUzivatel = Convert.ToInt32(reader["UZIVATEL_id_uzivatel"])
                             };
                         }
                     }
                 }
             }
             return null;
+        }
+
+        public List<Pacient> GetPacientiLekare(int idLekar)
+        {
+            var pacienti = new List<Pacient>();
+            using (var conn = _database.GetConnection())
+            {
+                // Vybereme pacienty, kteří mají u lékaře VYŠETŘENÍ nebo REZERVACI
+                string sql = @"
+                    SELECT DISTINCT p.ID_Pacient, p.jmeno, p.prijmeni, 
+                           '***-***-' || SUBSTR(p.telefon, -3) AS telefon_mask, 
+                           a.mesto,
+                           F_Vypocet_Veku(p.ID_Pacient) AS vek,
+                           F_Ma_Neschopenku(p.ID_Pacient) AS ma_neschopenku
+                    FROM PACIENT p
+                    JOIN ADRESA a ON p.ADRESA_ID__Adresa = a.ID__Adresa
+                    WHERE p.ID_Pacient IN (
+                        SELECT PACIENT_ID_Pacient FROM VYSETRENI WHERE LEKAR_ID_Lekar = :lid
+                        UNION
+                        SELECT PACIENT_ID_Pacient FROM REZERVACE WHERE LEKAR_ID_Lekar = :lid
+                    )
+                    ORDER BY p.prijmeni";
+
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.BindByName = true;
+                    cmd.Parameters.Add("lid", idLekar);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var p = new Pacient
+                            {
+                                IdPacient = Convert.ToInt32(reader["ID_Pacient"]),
+                                Jmeno = reader["jmeno"].ToString(),
+                                Prijmeni = reader["prijmeni"].ToString(),
+                                Telefon = reader["telefon_mask"].ToString(),
+                                Mesto = reader["mesto"].ToString(),
+                                Vek = reader["vek"] != DBNull.Value ? Convert.ToInt32(reader["vek"]) : 0
+                            };
+
+                            int neschop = reader["ma_neschopenku"] != DBNull.Value ? Convert.ToInt32(reader["ma_neschopenku"]) : 0;
+                            p.StavNeschopenky = (neschop == 1) ? "V pracovní neschopnosti" : "Zdravý";
+
+                            pacienti.Add(p);
+                        }
+                    }
+                }
+            }
+            return pacienti;
         }
 
         public void UpravitPacienta(Pacient p, int idUzivatel)
@@ -146,6 +210,27 @@ namespace OrdinaceApp1.DataAccess
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public int? GetIdPacientaByUzivatel(int idUzivatel)
+        {
+            using (var conn = _database.GetConnection())
+            {
+                string sql = "SELECT ID_Pacient FROM PACIENT WHERE UZIVATEL_id_uzivatel = :userid AND ROWNUM = 1";
+
+                using (var cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.BindByName = true;
+                    cmd.Parameters.Add("userid", idUzivatel);
+
+                    var result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+            return null;
         }
 
         public string GenerovatReportAlergii()

@@ -9,10 +9,27 @@ namespace OrdinaceApp1.Views
     public partial class UzivatelDetailWindow : Window
     {
         private int _idUzivatel = 0;
+        private bool _isRegistrationMode = false;
 
         public UzivatelDetailWindow()
         {
             InitializeComponent();
+        }
+
+        public UzivatelDetailWindow(bool isRegistration) : this()
+        {
+            _isRegistrationMode = isRegistration;
+
+            if (_isRegistrationMode)
+            {
+                this.Title = "Registrace nového pacienta";
+                // Skryjeme prvky, které si běžný uživatel nemůže nastavit
+                CmbRole.Visibility = Visibility.Collapsed;
+                ChkAktivni.Visibility = Visibility.Collapsed;
+
+                // Přednastavíme, že je účet aktivní
+                ChkAktivni.IsChecked = true;
+            }
         }
 
         public UzivatelDetailWindow(Uzivatel u)
@@ -38,7 +55,8 @@ namespace OrdinaceApp1.Views
 
         private void BtnUlozit_Click(object sender, RoutedEventArgs e)
         {
-            if (CmbRole.SelectedItem == null)
+            // Kontrola role jen pokud NEJSME v režimu registrace
+            if (!_isRegistrationMode && CmbRole.SelectedItem == null)
             {
                 MessageBox.Show("Vyberte roli!");
                 return;
@@ -46,8 +64,22 @@ namespace OrdinaceApp1.Views
 
             try
             {
-                var roleItem = (ComboBoxItem)CmbRole.SelectedItem;
-                int roleId = int.Parse(roleItem.Tag.ToString());
+                int roleId;
+                string aktivni;
+
+                if (_isRegistrationMode)
+                {
+                    // Při registraci je to vždy Pacient (ID 3) a Aktivní (A)
+                    roleId = 3;
+                    aktivni = "A";
+                }
+                else
+                {
+                    // Při editaci adminem bereme hodnoty z formuláře
+                    var roleItem = (ComboBoxItem)CmbRole.SelectedItem;
+                    roleId = int.Parse(roleItem.Tag.ToString());
+                    aktivni = (ChkAktivni.IsChecked == true) ? "A" : "N";
+                }
 
                 var u = new Uzivatel
                 {
@@ -56,21 +88,21 @@ namespace OrdinaceApp1.Views
                     Jmeno = TxtJmeno.Text,
                     Prijmeni = TxtPrijmeni.Text,
                     RoleId = roleId,
-                    Aktivni = (ChkAktivni.IsChecked == true) ? "A" : "N"
+                    Aktivni = aktivni
                 };
 
                 var repo = new UzivatelRepository();
 
-                if (_idUzivatel == 0)
+                if (_idUzivatel == 0) // Nový záznam
                 {
                     if (string.IsNullOrWhiteSpace(TxtHeslo.Text))
                     {
-                        MessageBox.Show("U nového uživatele musíte zadat heslo!");
+                        MessageBox.Show("Musíte zadat heslo!");
                         return;
                     }
                     repo.PridatUzivatele(u, TxtHeslo.Text);
                 }
-                else
+                else // Editace
                 {
                     repo.UpravitUzivatele(u, TxtHeslo.Text);
                 }
@@ -83,5 +115,6 @@ namespace OrdinaceApp1.Views
                 MessageBox.Show("Chyba: " + ex.Message);
             }
         }
+
     }
 }

@@ -72,6 +72,25 @@ namespace OrdinaceApp1.Views
             }
         }
 
+        private void BtnPrecenit_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (MessageBox.Show("Chcete plošně zdražit všechny léky o 10%?", "Hromadná akce", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var repo = new LekRepository();
+                    repo.HromadnePreceneni(10); // Volá proceduru SP_Hromadne_Preceneni
+                    NacistData();
+                    MessageBox.Show("Ceny byly aktualizovány.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Chyba: " + ex.Message);
+                }
+            }
+        }
+
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
