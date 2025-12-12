@@ -20,7 +20,6 @@ namespace OrdinaceApp1.DataAccess
             var list = new List<Predpis>();
             using (var conn = _database.GetConnection())
             {
-                // SELECT zůstává stejný, taháme POPISLEKU
                 string sql = @"
                     SELECT 
                         lp.ID_PREDPIS,
@@ -47,11 +46,7 @@ namespace OrdinaceApp1.DataAccess
                                 IdPredpis = Convert.ToInt32(reader["ID_PREDPIS"]),
                                 DatumVydani = Convert.ToDateTime(reader["DATUMVYDANI"]),
 
-                                // --- OPRAVA ZDE ---
-                                // Text z databáze (POPISLEKU) dáváme do LekNazev (string)
                                 LekNazev = reader["POPISLEKU"].ToString(),
-                                // IdLek necháme být (nebo 0), protože ho z tohoto selectu nemáme
-                                // ------------------
 
                                 Davkovani = reader["DAVKOVANI"].ToString(),
                                 DelkaLecby = reader["DELKALECBY"] != DBNull.Value ? reader["DELKALECBY"].ToString() : "",
@@ -69,13 +64,9 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                // 1. Získání ID posledního vyšetření
                 int idVysetreni = 0;
 
-                // --- ZDE BYLA CHYBA (bylo tam ORDER BY datum) ---
-                // Opraveno na: ORDER BY DATUMVYSETRENI
                 string sqlGetVysetreni = "SELECT ID_VYSETRENI FROM VYSETRENI WHERE PACIENT_ID_PACIENT = :idPac ORDER BY DATUMVYSETRENI DESC FETCH FIRST 1 ROWS ONLY";
-                // ------------------------------------------------
 
                 using (var cmdCheck = new OracleCommand(sqlGetVysetreni, conn))
                 {
@@ -92,7 +83,6 @@ namespace OrdinaceApp1.DataAccess
                     }
                 }
 
-                // 2. Vložení receptu (toto už by mělo být správně z předchozího kroku)
                 string sql = @"INSERT INTO LEKARSKY_PREDPIS 
                        (DATUMVYDANI, POPISLEKU, DAVKOVANI, DELKALECBY, LEKAR_ID_LEKAR, VYSETRENI_ID_VYSETRENI) 
                        VALUES (:datum, :popis, :davka, :delka, :idLekar, :idVysetreni)";
