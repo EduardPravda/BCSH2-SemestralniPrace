@@ -11,7 +11,7 @@
 
         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="ROZPIS SLUŽEB" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
-            <Button Content="➕ Přidat čas" Margin="20,0,0,0" Padding="10,5" Click="BtnPridat_Click"/>
+            <Button x:Name="BtnPridatCas" Content="➕ Přidat čas" Margin="20,0,0,0" Padding="10,5" Click="BtnPridat_Click"/>
         </StackPanel>
 
         <DataGrid Name="DgDoby" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFFFE0">
@@ -24,7 +24,7 @@
         </DataGrid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-            <Button Content="🗑️ Smazat záznam" Width="170" Height="30" Click="BtnSmazat_Click"/>
+            <Button x:Name="BtnSmazatZaznam" Content="🗑️ Smazat záznam" Width="170" Height="30" Click="BtnSmazat_Click"/>
             <Button Content="Zavřít" Width="80" Height="30" Margin="20,0,0,0" Click="BtnClose_Click"/>
         </StackPanel>
     </Grid>

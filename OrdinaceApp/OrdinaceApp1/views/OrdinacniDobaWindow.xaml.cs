@@ -7,9 +7,14 @@ namespace OrdinaceApp1.Views
 {
     public partial class OrdinacniDobaWindow : Window
     {
-        public OrdinacniDobaWindow()
+        private int _idRole;
+
+        public OrdinacniDobaWindow(int idRole)
         {
             InitializeComponent();
+            _idRole = idRole;
+
+            NastavitOpravneni();
             NacistData();
         }
 
@@ -54,5 +59,17 @@ namespace OrdinaceApp1.Views
         {
             this.Close();
         }
+
+        private void NastavitOpravneni()
+        {
+            // Povolení úprav pouze pro Admina (1) a Lékaře (2).
+            // Host/Pacient (Role ID 3, 4, atd.) úpravy nevidí.
+            if (_idRole > 2)
+            {
+                if (BtnPridatCas != null) BtnPridatCas.Visibility = Visibility.Collapsed;
+                if (BtnSmazatZaznam != null) BtnSmazatZaznam.Visibility = Visibility.Collapsed;
+            }
+        }
+
     }
 }

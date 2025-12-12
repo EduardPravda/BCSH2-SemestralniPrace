@@ -20,7 +20,7 @@
                 <MenuItem Header="Ukončit" Click="MenuUkoncit_Click"/>
             </MenuItem>
 
-            <MenuItem Header="🧑‍⚕️ Pacienti">
+            <MenuItem Header="🧑‍⚕️ Pacienti" x:Name="MenuPacienti">
                 <MenuItem Header="Seznam pacientů" x:Name="MenuPacientiSeznam" Click="MenuPacientiSeznam_Click"/>
 
                 <MenuItem Header="Přidat nového pacienta" x:Name="MenuPacientNovy" Click="MenuPacientNovy_Click" FontWeight="Bold"/>
@@ -52,6 +52,12 @@
                 <MenuItem Header="Číselník nemocí (Diagnózy)" Click="MenuNemoci_Click"/>
                 <Separator/>
                 <MenuItem Header="Ordinační hodiny" Click="MenuOrdinace_Click"/>
+
+                <MenuItem Header="ℹ️ Info" x:Name="MenuInfo">
+                    <MenuItem Header="Ordinační hodiny" Click="MenuOrdinace_Click"/>
+                    <MenuItem Header="Kontakt" Click="MenuKontakt_Click"/>
+                    
+                </MenuItem>
             </MenuItem>
         </Menu>
 

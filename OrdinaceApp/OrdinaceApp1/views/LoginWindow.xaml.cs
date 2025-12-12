@@ -68,5 +68,21 @@ namespace OrdinaceApp1.Views
             // Po zavření může uživatel zadat své nové údaje do loginu
         }
 
+        private void BtnHost_Click(object sender, RoutedEventArgs e)
+        {
+            var host = new Uzivatel
+            {
+                IdUzivatel = 0,
+                Jmeno = "Neregistrovaný",
+                Prijmeni = "Návštěvník",
+                RoleId = 4, // 4 = Host
+                PrihlasovaciJmeno = "host"
+            };
+
+            var main = new MainWindow(host);
+            main.Show();
+            this.Close();
+        }
+
     }
 }

@@ -25,20 +25,33 @@ namespace OrdinaceApp1
 
         private void NacistSeznamPacientu()
         {
-            // Pokud je to pacient (Role 3), seznam nevidí
-            if (PrihlasenyUzivatel.RoleId == 3)
+            // 1. Ošetření pro neregistrovaného HOSTA (Role 4 nebo 0)
+            if (PrihlasenyUzivatel.RoleId == 4 || PrihlasenyUzivatel.IdUzivatel == 0)
             {
-                TxtStatus.Text = "Vítejte v pacientské sekci.";
+                TxtStatus.Text = "Režim Host - Prohlížení ordinačních hodin.";
+                MainDataGrid.ItemsSource = null; // Vyčistit tabulku
+
+                var oknoOrdinace = new OrdinaceApp1.Views.OrdinacniDobaWindow(PrihlasenyUzivatel.RoleId);
+                oknoOrdinace.Show();
+
                 return;
             }
 
+            // 2. Ošetření pro PACIENTA (Role 3)
+            if (PrihlasenyUzivatel.RoleId == 3)
+            {
+                TxtStatus.Text = "Vítejte v pacientské sekci.";
+                MainDataGrid.ItemsSource = null;
+                return;
+            }
+
+            // 3. Pro LÉKAŘE (2) a ADMINA (1) načteme data
             try
             {
                 var repo = new PacientRepository();
                 System.Collections.Generic.List<Pacient> data;
 
-                // Pokud je to LÉKAŘ (Role 2), vidí jen své pacienty
-                if (PrihlasenyUzivatel.RoleId == 2)
+                if (PrihlasenyUzivatel.RoleId == 2) // Lékař
                 {
                     var lekarRepo = new LekarRepository();
                     int? idLekar = lekarRepo.GetLekarIdByUzivatel(PrihlasenyUzivatel.IdUzivatel);
@@ -50,12 +63,11 @@ namespace OrdinaceApp1
                     }
                     else
                     {
-                        // Lékař v systému existuje jako uživatel, ale nemá záznam v tabulce LEKAR
                         data = new System.Collections.Generic.List<Pacient>();
                         TxtStatus.Text = "Chyba: Uživatel není propojen s kartou lékaře.";
                     }
                 }
-                else // ADMINISTRÁTOR (Role 1) vidí vše
+                else // Admin (1)
                 {
                     data = repo.GetPacientiPublic();
                     TxtStatus.Text = $"Načteno {data.Count} pacientů (Admin pohled).";
@@ -95,6 +107,18 @@ namespace OrdinaceApp1
                 if (MenuAnamneza != null) MenuAnamneza.Visibility = Visibility.Collapsed;
                 if (MenuAlergie != null) MenuAlergie.Visibility = Visibility.Collapsed;
             }
+
+            if (PrihlasenyUzivatel.RoleId == 4 || PrihlasenyUzivatel.IdUzivatel == 0) // Host
+            {
+                // Skrýt menu Pacienti
+                if (MenuPacienti != null) MenuPacienti.Visibility = Visibility.Collapsed;
+
+                // Skrýt menu Admin
+                if (MenuAdmin != null) MenuAdmin.Visibility = Visibility.Collapsed;
+
+                // Skrýt menu Info
+                if (MenuInfo != null) MenuInfo.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void MenuOdhlasit_Click(object sender, RoutedEventArgs e)
@@ -102,6 +126,17 @@ namespace OrdinaceApp1
             var loginWindow = new OrdinaceApp1.Views.LoginWindow();
             loginWindow.Show();
             this.Close();
+        }
+
+        private void MenuKontakt_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("MUDr. Jan Novák\n" +
+                            "Tel: +420 123 456 789\n" +
+                            "Email: ordinace@nemocnice.cz\n\n" +
+                            "Adresa:\n" +
+                            "Nemocniční 1\n" +
+                            "500 05 Hradec Králové",
+                            "Kontakt na ordinaci", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void MenuUkoncit_Click(object sender, RoutedEventArgs e)
@@ -200,7 +235,7 @@ namespace OrdinaceApp1
         }
         private void MenuOrdinace_Click(object sender, RoutedEventArgs e)
         {
-            var okno = new OrdinaceApp1.Views.OrdinacniDobaWindow();
+            var okno = new OrdinaceApp1.Views.OrdinacniDobaWindow(PrihlasenyUzivatel.RoleId);
             okno.ShowDialog();
         }
         private void MenuRezervace_Click(object sender, RoutedEventArgs e)

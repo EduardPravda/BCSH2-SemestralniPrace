@@ -45,6 +45,10 @@
                     Background="Transparent" Foreground="#0078D7" BorderThickness="0"
                     Cursor="Hand" Click="BtnRegistrace_Click"/>
 
+                <Button Content="Pokračovat jako host" Height="30" Margin="0,5,0,0" 
+        Background="Transparent" Foreground="Gray" BorderThickness="0"
+        Cursor="Hand" Click="BtnHost_Click"/>
+
                 <TextBlock Name="TxtChyba" Foreground="#DC3545" Margin="0,15,0,0" 
                            HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontSize="12"/>
             </StackPanel>
