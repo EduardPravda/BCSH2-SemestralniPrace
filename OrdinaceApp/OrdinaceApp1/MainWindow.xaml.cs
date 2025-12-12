@@ -283,6 +283,7 @@ namespace OrdinaceApp1
             var okno = new OrdinaceApp1.Views.LekariWindow();
             okno.ShowDialog();
         }
+
         */
     }
 }
