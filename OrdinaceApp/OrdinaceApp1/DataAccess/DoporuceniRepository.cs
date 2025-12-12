@@ -20,8 +20,6 @@ namespace OrdinaceApp1.DataAccess
             var list = new List<Doporuceni>();
             using (var conn = _database.GetConnection())
             {
-                // ZDE JSOU OPRAVENÉ NÁZVY SLOUPCŮ PODLE TVÉ TABULKY:
-                // datumVydani, duvodDoporuceni
                 string sql = @"
                     SELECT d.ID_doporuceni, d.duvodDoporuceni, d.datumVydani,
                            d.PACIENT_ID_Pacient, d.LEKAR_ID_Lekar,
@@ -42,7 +40,6 @@ namespace OrdinaceApp1.DataAccess
                             {
                                 IdDoporuceni = Convert.ToInt32(reader["ID_doporuceni"]),
 
-                                // Tady mapujeme názvy z DB do modelu C#
                                 Duvod = reader["duvodDoporuceni"].ToString(),
                                 Datum = Convert.ToDateTime(reader["datumVydani"]),
 
@@ -63,7 +60,6 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                // OPRAVENO: Používáme přesné názvy: duvodDoporuceni, datumVydani
                 string sql = @"INSERT INTO DOPORUCENI (duvodDoporuceni, datumVydani, PACIENT_ID_Pacient, LEKAR_ID_Lekar)
                                VALUES (:duvod, :datum, :idPac, :idLek)";
 
@@ -84,7 +80,6 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                // Tady taky pozor na ID_doporuceni
                 string sql = "DELETE FROM DOPORUCENI WHERE ID_doporuceni = :id";
                 using (var cmd = new OracleCommand(sql, conn))
                 {
