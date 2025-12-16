@@ -103,12 +103,12 @@ namespace OrdinaceApp1.DataAccess
             using (var conn = _database.GetConnection())
             {
                 string sql = @"
-                    SELECT p.ID_Pacient, p.jmeno, p.prijmeni, p.telefon, p.email, p.datumNarozeni,
-                           p.ADRESA_ID__Adresa, p.UZIVATEL_id_uzivatel,
-                           a.ulice, a.mesto, a.psc
-                    FROM PACIENT p
-                    JOIN ADRESA a ON p.ADRESA_ID__Adresa = a.ID__Adresa
-                    WHERE p.ID_Pacient = :id";
+            SELECT p.ID_Pacient, p.jmeno, p.prijmeni, p.telefon, p.email, p.datumNarozeni,
+                   p.ADRESA_ID__Adresa, p.UZIVATEL_id_uzivatel,
+                   a.ulice, a.mesto, a.psc
+            FROM PACIENT p
+            JOIN ADRESA a ON p.ADRESA_ID__Adresa = a.ID__Adresa
+            WHERE p.ID_Pacient = :id";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
@@ -125,6 +125,12 @@ namespace OrdinaceApp1.DataAccess
                                 Prijmeni = reader["prijmeni"].ToString(),
                                 Telefon = reader["telefon"] != DBNull.Value ? reader["telefon"].ToString() : "",
                                 Mesto = reader["mesto"].ToString(),
+                                Ulice = reader["ulice"] != DBNull.Value ? reader["ulice"].ToString() : "",
+                                Psc = reader["psc"] != DBNull.Value ? reader["psc"].ToString() : "",
+                                Email = reader["email"] != DBNull.Value ? reader["email"].ToString() : "",
+                                IdUzivatel = reader["UZIVATEL_id_uzivatel"] != DBNull.Value ? Convert.ToInt32(reader["UZIVATEL_id_uzivatel"]) : 0,
+
+                                DatumNarozeni = reader["datumNarozeni"] != DBNull.Value ? Convert.ToDateTime(reader["datumNarozeni"]) : DateTime.MinValue
                             };
                         }
                     }
@@ -188,23 +194,39 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                string sql = @"UPDATE PACIENT SET 
-                               jmeno = :jmeno,
-                               prijmeni = :prijmeni,
-                               ulice = :ulice,
-                               mesto = :mesto,
-                               psc = :psc,
-                               UZIVATEL_id_uzivatel = :uid
-                               WHERE ID_Pacient = :id";
+                string sql = @"
+            BEGIN
+                UPDATE ADRESA SET 
+                    ulice = :ulice,
+                    mesto = :mesto,
+                    psc = :psc
+                WHERE ID__Adresa = (SELECT ADRESA_ID__Adresa FROM PACIENT WHERE ID_Pacient = :id);
+
+                UPDATE PACIENT SET 
+                    jmeno = :jmeno,
+                    prijmeni = :prijmeni,
+                    datumNarozeni = :datnar,
+                    telefon = :tel,
+                    UZIVATEL_id_uzivatel = :userid
+                WHERE ID_Pacient = :id;
+            END;";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
+                    cmd.BindByName = true;
+
+                    // Adresa
+                    cmd.Parameters.Add("ulice", !string.IsNullOrEmpty(p.Ulice) ? p.Ulice : "Neznámá");
+                    cmd.Parameters.Add("mesto", p.Mesto);
+                    cmd.Parameters.Add("psc", !string.IsNullOrEmpty(p.Psc) ? p.Psc : "00000");
+
+                    // Pacient
                     cmd.Parameters.Add("jmeno", p.Jmeno);
                     cmd.Parameters.Add("prijmeni", p.Prijmeni);
-                    cmd.Parameters.Add("ulice", "Neznámá");
-                    cmd.Parameters.Add("mesto", p.Mesto);
-                    cmd.Parameters.Add("psc", "00000"); 
-                    cmd.Parameters.Add("uid", idUzivatel);
+                    cmd.Parameters.Add("datnar", OracleDbType.Date).Value = p.DatumNarozeni;
+                    cmd.Parameters.Add("tel", p.Telefon);
+                    cmd.Parameters.Add("userid", idUzivatel);
+
                     cmd.Parameters.Add("id", p.IdPacient);
 
                     cmd.ExecuteNonQuery();

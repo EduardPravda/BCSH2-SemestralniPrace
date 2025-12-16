@@ -62,9 +62,17 @@ namespace OrdinaceApp1.Views
 
         private void BtnUlozit_Click(object sender, RoutedEventArgs e)
         {
+            // 1. Validace jména a uživatele
             if (string.IsNullOrWhiteSpace(TxtJmeno.Text) || CmbUzivatele.SelectedValue == null)
             {
                 MessageBox.Show("Vyplňte jméno a uživatele.");
+                return;
+            }
+
+            // 2. Validace data narození
+            if (DpDatumNarozeni.SelectedDate == null)
+            {
+                MessageBox.Show("Vyberte datum narození!");
                 return;
             }
 
@@ -76,10 +84,11 @@ namespace OrdinaceApp1.Views
 
                 if (_idPacientEdit == 0)
                 {
+                    // Přidání nového pacienta
                     repo.PridatPacienta(
                         TxtJmeno.Text,
                         TxtPrijmeni.Text,
-                        DpDatumNarozeni.SelectedDate ?? DateTime.Now,
+                        DpDatumNarozeni.SelectedDate.Value,
                         TxtUlice.Text,
                         TxtMesto.Text,
                         TxtPsc.Text,
@@ -93,7 +102,10 @@ namespace OrdinaceApp1.Views
                         IdPacient = _idPacientEdit,
                         Jmeno = TxtJmeno.Text,
                         Prijmeni = TxtPrijmeni.Text,
-                        Mesto = TxtMesto.Text
+                        DatumNarozeni = DpDatumNarozeni.SelectedDate.Value,
+                        Ulice = TxtUlice.Text,
+                        Mesto = TxtMesto.Text,
+                        Psc = TxtPsc.Text,
                     };
 
                     repo.UpravitPacienta(p, idUzivatel);

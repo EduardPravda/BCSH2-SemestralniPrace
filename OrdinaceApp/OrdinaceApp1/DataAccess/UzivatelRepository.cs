@@ -82,19 +82,20 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                // Poznámka: Heslo by se mělo hashovat, pro školní projekt ho ukládáme jako text
-                string sql = @"INSERT INTO UZIVATEL (prihlasovaci_jmeno, heslo, jmeno, prijmeni, role_id_role, aktivni, datum_registrace, email)
-                               VALUES (:login, :heslo, :jmeno, :prijmeni, :role, :aktivni, SYSDATE, :email)";
+                string sql = @"INSERT INTO UZIVATEL (prihlasovaci_jmeno, heslo, jmeno, prijmeni, role_id_role, aktivni, datum_registrace, email, telefon)
+                               VALUES (:login, :heslo, :jmeno, :prijmeni, :role, :aktivni, SYSDATE, :email, :tel)";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
+                    cmd.BindByName = true;
                     cmd.Parameters.Add("login", u.PrihlasovaciJmeno);
-                    cmd.Parameters.Add("heslo", heslo); 
+                    cmd.Parameters.Add("heslo", heslo);
                     cmd.Parameters.Add("jmeno", u.Jmeno);
                     cmd.Parameters.Add("prijmeni", u.Prijmeni);
                     cmd.Parameters.Add("role", u.RoleId);
-                    cmd.Parameters.Add("aktivni", u.Aktivni); 
-                    cmd.Parameters.Add("email", u.PrihlasovaciJmeno + "@nemocnice.cz"); 
+                    cmd.Parameters.Add("aktivni", u.Aktivni);
+                    cmd.Parameters.Add("email", u.PrihlasovaciJmeno + "@nemocnice.cz");
+                    cmd.Parameters.Add("tel", u.Telefon);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -110,7 +111,8 @@ namespace OrdinaceApp1.DataAccess
                                jmeno = :jmeno, 
                                prijmeni = :prijmeni, 
                                role_id_role = :role, 
-                               aktivni = :aktivni";
+                               aktivni = :aktivni,
+                               telefon = :tel";
 
                 if (!string.IsNullOrEmpty(noveHeslo))
                 {
@@ -121,11 +123,13 @@ namespace OrdinaceApp1.DataAccess
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
+                    cmd.BindByName = true;
                     cmd.Parameters.Add("login", u.PrihlasovaciJmeno);
                     cmd.Parameters.Add("jmeno", u.Jmeno);
                     cmd.Parameters.Add("prijmeni", u.Prijmeni);
                     cmd.Parameters.Add("role", u.RoleId);
                     cmd.Parameters.Add("aktivni", u.Aktivni);
+                    cmd.Parameters.Add("tel", u.Telefon);
 
                     if (!string.IsNullOrEmpty(noveHeslo))
                     {

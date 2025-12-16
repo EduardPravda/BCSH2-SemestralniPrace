@@ -39,6 +39,9 @@ namespace OrdinaceApp1.Views
             TxtLogin.Text = u.PrihlasovaciJmeno;
             TxtJmeno.Text = u.Jmeno;
             TxtPrijmeni.Text = u.Prijmeni;
+
+            TxtTelefon.Text = u.Telefon;
+
             ChkAktivni.IsChecked = (u.Aktivni == "A");
 
             foreach (ComboBoxItem item in CmbRole.Items)
@@ -49,17 +52,36 @@ namespace OrdinaceApp1.Views
                     break;
                 }
             }
-
-            TxtHeslo.ToolTip = "Zadejte nové heslo jen pokud ho chcete změnit.";
         }
 
         private void BtnUlozit_Click(object sender, RoutedEventArgs e)
         {
-            // Kontrola role jen pokud NEJSME v režimu registrace
+            // 1. Validace Role (pokud nejsme v registraci)
             if (!_isRegistrationMode && CmbRole.SelectedItem == null)
             {
                 MessageBox.Show("Vyberte roli!");
                 return;
+            }
+
+            // 2. Získání a kontrola hesel (z PasswordBoxů)
+            string noveHeslo = PbHeslo.Password;
+            string kontrolaHesla = PbHesloKontrola.Password;
+
+            if (_idUzivatel == 0 && string.IsNullOrWhiteSpace(noveHeslo))
+            {
+                MessageBox.Show("Musíte zadat heslo!");
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(noveHeslo))
+            {
+                if (noveHeslo != kontrolaHesla)
+                {
+                    MessageBox.Show("Hesla se neshodují! Zadejte je znovu.");
+                    PbHeslo.Clear();
+                    PbHesloKontrola.Clear();
+                    return;
+                }
             }
 
             try
@@ -69,13 +91,11 @@ namespace OrdinaceApp1.Views
 
                 if (_isRegistrationMode)
                 {
-                    // Při registraci je to vždy Pacient (ID 3) a Aktivní (A)
-                    roleId = 3;
+                    roleId = 3; // Pacient
                     aktivni = "A";
                 }
                 else
                 {
-                    // Při editaci adminem bereme hodnoty z formuláře
                     var roleItem = (ComboBoxItem)CmbRole.SelectedItem;
                     roleId = int.Parse(roleItem.Tag.ToString());
                     aktivni = (ChkAktivni.IsChecked == true) ? "A" : "N";
@@ -88,23 +108,19 @@ namespace OrdinaceApp1.Views
                     Jmeno = TxtJmeno.Text,
                     Prijmeni = TxtPrijmeni.Text,
                     RoleId = roleId,
-                    Aktivni = aktivni
+                    Aktivni = aktivni,
+                    Telefon = TxtTelefon.Text
                 };
 
                 var repo = new UzivatelRepository();
 
-                if (_idUzivatel == 0) // Nový záznam
+                if (_idUzivatel == 0)
                 {
-                    if (string.IsNullOrWhiteSpace(TxtHeslo.Text))
-                    {
-                        MessageBox.Show("Musíte zadat heslo!");
-                        return;
-                    }
-                    repo.PridatUzivatele(u, TxtHeslo.Text);
+                    repo.PridatUzivatele(u, noveHeslo);
                 }
-                else // Editace
+                else
                 {
-                    repo.UpravitUzivatele(u, TxtHeslo.Text);
+                    repo.UpravitUzivatele(u, noveHeslo);
                 }
 
                 MessageBox.Show("Uloženo.");

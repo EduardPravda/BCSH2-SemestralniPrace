@@ -85,11 +85,11 @@ namespace OrdinaceApp1.DataAccess
         {
             using (var conn = _database.GetConnection())
             {
-                string sql = "SELECT ID_Lekar FROM LEKAR WHERE UZIVATEL_id_uzivatel = :uid AND ROWNUM = 1";
+                string sql = "SELECT ID_Lekar FROM LEKAR WHERE UZIVATEL_id_uzivatel = :userid AND ROWNUM = 1";
                 using (var cmd = new OracleCommand(sql, conn))
                 {
                     cmd.BindByName = true;
-                    cmd.Parameters.Add("uid", idUzivatel);
+                    cmd.Parameters.Add("userid", idUzivatel);
                     var result = cmd.ExecuteScalar();
 
                     if (result != null && result != DBNull.Value)
@@ -106,16 +106,17 @@ namespace OrdinaceApp1.DataAccess
             using (var conn = _database.GetConnection())
             {
                 string sql = @"INSERT INTO LEKAR (jmeno, prijmeni, specializace, telefon, email, UZIVATEL_id_uzivatel, ID_Vedouci_Lekar)
-                               VALUES (:jmeno, :prijmeni, :spec, :tel, :email, :uid, :vedouci)";
+                       VALUES (:jmeno, :prijmeni, :spec, :tel, :email, :userid, :vedouci)";
 
                 using (var cmd = new OracleCommand(sql, conn))
                 {
+                    cmd.BindByName = true;
                     cmd.Parameters.Add("jmeno", l.Jmeno);
                     cmd.Parameters.Add("prijmeni", l.Prijmeni);
                     cmd.Parameters.Add("spec", l.Specializace);
                     cmd.Parameters.Add("tel", l.Telefon);
                     cmd.Parameters.Add("email", l.Email);
-                    cmd.Parameters.Add("uid", l.IdUzivatel);
+                    cmd.Parameters.Add("userid", l.IdUzivatel);
 
                     if (l.IdVedouci.HasValue && l.IdVedouci.Value > 0)
                         cmd.Parameters.Add("vedouci", l.IdVedouci.Value);

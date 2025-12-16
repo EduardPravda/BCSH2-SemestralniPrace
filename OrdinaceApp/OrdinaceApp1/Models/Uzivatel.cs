@@ -11,6 +11,8 @@ namespace OrdinaceApp1.Models
         public int RoleId { get; set; }
         public string Aktivni { get; set; }
 
+        public string Telefon { get; set; }
+
         public string CeleJmeno => $"{Jmeno} {Prijmeni}";
     }
 }
